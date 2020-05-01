@@ -1,0 +1,879 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>入门  · QGroundControl Developer Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-dronecode/theme_styles.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="CentOS.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+    
+    <!-- ##HW Add dronecode menu -->
+    <div id="common_dronecode_menu">
+
+      <div class="common_menu_logo large_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png" alt="Dronecode logo (large)" />
+        </a>
+      </div>
+      <div class="common_menu_logo small_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png" alt="Dronecode logo (small)" />
+        </a>
+      </div>
+      
+      <div class="common_menu_options">
+        
+            <div class="common_dronecode_menu_item"><a href="http://px4.io/">PX4</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://qgroundcontrol.com/">QGroundControl</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://qgroundcontrol.com/">QGC</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://www.dronecode.org/sdk/">SDK</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://mavlink.io/en/">MAVLink</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="https://www.dronecode.org/documentation/">Documentation</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="https://www.dronecode.org/documentation/">Docs</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://discuss.px4.io/">Support</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://discuss.px4.io/">Help</a></div>
+        
+      </div>
+    </div>
+    
+<!-- ##HW END Add dronecode menu -->
+    
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    摘要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    入门 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="CentOS.html">
+            
+                <a href="CentOS.html">
+            
+                    
+                    在 CentOS 上运行 QGC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../communication_flow.html">
+            
+                <a href="../communication_flow.html">
+            
+                    
+                    通信流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../firmware_plugin.html">
+            
+                <a href="../firmware_plugin.html">
+            
+                    
+                    固件插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../classes/">
+            
+                <a href="../classes/">
+            
+                    
+                    类层次结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ui_design/">
+            
+                <a href="../ui_design/">
+            
+                    
+                    用户接口设计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../ui_design/multi_device_pattern.html">
+            
+                <a href="../ui_design/multi_device_pattern.html">
+            
+                    
+                    多设备设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../ui_design/font_palette.html">
+            
+                <a href="../ui_design/font_palette.html">
+            
+                    
+                    字体和调色板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../ui_design/controls.html">
+            
+                <a href="../ui_design/controls.html">
+            
+                    
+                    UI控件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../fact_system.html">
+            
+                <a href="../fact_system.html">
+            
+                    
+                    事实系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../views/">
+            
+                <a href="../views/">
+            
+                    
+                    顶级视图
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../views/settings.html">
+            
+                <a href="../views/settings.html">
+            
+                    
+                    设置视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../views/setup.html">
+            
+                <a href="../views/setup.html">
+            
+                    
+                    设置视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../views/plan.html">
+            
+                <a href="../views/plan.html">
+            
+                    
+                    规划视图 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../views/fly.html">
+            
+                <a href="../views/fly.html">
+            
+                    
+                    飞行视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../file_formats/">
+            
+                <a href="../file_formats/">
+            
+                    
+                    File Formats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../tools/">
+            
+                <a href="../tools/">
+            
+                    
+                    开发者工具 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../tools/mock_link.html">
+            
+                <a href="../tools/mock_link.html">
+            
+                    
+                    模拟链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../command_line_options.html">
+            
+                <a href="../command_line_options.html">
+            
+                    
+                    命令行选项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../custom_build/custom_build.html">
+            
+                <a href="../custom_build/custom_build.html">
+            
+                    
+                    自定义构建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../custom_build/upstream_merge.html">
+            
+                <a href="../custom_build/upstream_merge.html">
+            
+                    
+                    从QGC repro更新自定义构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../contribute/">
+            
+                <a href="../contribute/">
+            
+                    
+                    代码提交
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../contribute/coding_style.html">
+            
+                <a href="../contribute/coding_style.html">
+            
+                    
+                    编码风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../contribute/unit_tests.html">
+            
+                <a href="../contribute/unit_tests.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../contribute/pull_requests.html">
+            
+                <a href="../contribute/pull_requests.html">
+            
+                    
+                    请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../contribute/licences.html">
+            
+                <a href="../contribute/licences.html">
+            
+                    
+                    许可证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dronecode快捷方式</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://docs.qgroundcontrol.com/en/">
+            
+                    
+                    QGroundControl用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://docs.px4.io/en/">
+            
+                    
+                    PX4用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <a target="_blank" href="https://dev.px4.io/en/">
+            
+                    
+                    PX4开发人员指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <a target="_blank" href="https://mavlink.io/en/">
+            
+                    
+                    MAVLink指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <a target="_blank" href="https://mavsdk.mavlink.io/">
+            
+                    
+                    MAVSDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <a target="_blank" href="https://camera-manager.dronecode.org/en/">
+            
+                    
+                    Dronecode相机管理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >入门 </a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5165;&#x95E8;&#x6307;&#x5357;"><a name="&#x5165;&#x95E8;&#x6307;&#x5357;" class="plugin-anchor" href="#&#x5165;&#x95E8;&#x6307;&#x5357;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5165;&#x95E8;&#x6307;&#x5357;</h1>
+<p>&#x672C;&#x4E3B;&#x9898;&#x8BF4;&#x660E;&#x5982;&#x4F55;&#x83B7;&#x53D6;QGroundControl&#x6E90;&#x4EE3;&#x7801;&#x5E76;&#x5728;&#x672C;&#x673A;&#x6216;&#x5728;Vagrant(&#x865A;&#x62DF;&#x673A;)&#x73AF;&#x5883;&#x4E2D;&#x6784;&#x5EFA;&#x5B83;&#x3002; &#x672C;&#x4E3B;&#x9898;&#x8FD8;&#x63D0;&#x4F9B;&#x5176;&#x4ED6;&#x53EF;&#x9009;&#x529F;&#x80FD;&#x4FE1;&#x606F;&#x53CA;&#x7279;&#x5B9A;&#x4E8E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x529F;&#x80FD;&#x4FE1;&#x606F;&#x3002;</p>
+<h2 id="&#x6BCF;&#x65E5;&#x6784;&#x5EFA;"><a name="&#x6BCF;&#x65E5;&#x6784;&#x5EFA;" class="plugin-anchor" href="#&#x6BCF;&#x65E5;&#x6784;&#x5EFA;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6BCF;&#x65E5;&#x6784;&#x5EFA;</h2>
+<p>&#x5982;&#x679C;&#x60A8;&#x53EA;&#x662F;&#x60F3;&#x6D4B;&#x8BD5; (&#x800C;&#x4E0D;&#x662F;&#x8C03;&#x8BD5;) &#x6700;&#x8FD1;&#x751F;&#x6210;&#x7684; <em>QGroundControl</em> &#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x4F7F;&#x7528;<a href="https://docs.qgroundcontrol.com/en/releases/daily_builds.html" target="_blank">Daily build</a>&#x3002; &#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x4E86;&#x9002;&#x7528;&#x4E8E;&#x6240;&#x6709;&#x5E73;&#x53F0;&#x7684;&#x7248;&#x672C;&#x3002;</p>
+<h2 id="&#x6E90;&#x4EE3;&#x7801;"><a name="&#x6E90;&#x4EE3;&#x7801;" class="plugin-anchor" href="#&#x6E90;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E90;&#x4EE3;&#x7801;</h2>
+<p><em>QGroundControl</em> &#x7684;&#x6E90;&#x4EE3;&#x7801;&#x4FDD;&#x5B58;&#x5728; github &#x4E0A;&#xFF0C;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x4E3A;: <a href="https://github.com/mavlink/qgroundcontrol&#x3002;" target="_blank">https://github.com/mavlink/qgroundcontrol&#x3002;</a> QGroundControl&#x6E90;&#x4EE3;&#x7801;&#x5728;Apache 2.0&#x548C;GPLv3&#x4E0B;&#x662F;&#x53CC;&#x8BB8;&#x53EF;&#x7684;&#x3002; &#x6709;&#x5173;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;&#xFF1A;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</p>
+<p>&#x8981;&#x83B7;&#x53D6;&#x6E90;&#x6587;&#x4EF6;, &#x8BF7;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;:</p>
+<ol>
+<li>&#x514B;&#x9686;&#x5B58;&#x50A8;&#x5E93; (&#x6216;&#x60A8;&#x7684;&#x5206;&#x53C9;), &#x5305;&#x62EC;&#x5B50;&#x6A21;&#x5757;: <code>git clone https://github.com/mavlink/qgroundcontrol.git --recursive</code></li>
+<li>2.&#x66F4;&#x65B0;&#x5B50;&#x6A21;&#x5757;&#xFF08;&#x6BCF;&#x6B21;&#x62C9;&#x65B0;&#x6E90;&#x4EE3;&#x7801;&#x65F6;&#x90FD;&#x8FD9;&#x6837;&#x505A;&#xFF09;&#xFF1A; <code>git submodule update</code></li>
+</ol>
+<blockquote>
+<p>&#x63D0;&#x793A;&#xFF1A;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;Github&#x4EE5;zip&#x5F62;&#x5F0F;&#x4E0B;&#x8F7D;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x56E0;&#x4E3A;zip&#x538B;&#x7F29;&#x5305;&#x4E2D;&#x4E0D;&#x5305;&#x542B;&#x76F8;&#x5E94;&#x7684;&#x5B50;&#x6A21;&#x5757;&#x6E90;&#x4EE3;&#x7801;&#x3002; &#x4F60;&#x5FC5;&#x987B;&#x4F7F;&#x7528;git&#x5DE5;&#x5177;&#xFF01;</p>
+</blockquote>
+<h2 id="&#x6784;&#x5EFA;qgroundcontrol&#x5F00;&#x53D1;&#x73AF;&#x5883;"><a name="&#x6784;&#x5EFA;qgroundcontrol&#x5F00;&#x53D1;&#x73AF;&#x5883;" class="plugin-anchor" href="#&#x6784;&#x5EFA;qgroundcontrol&#x5F00;&#x53D1;&#x73AF;&#x5883;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6784;&#x5EFA;QGroundControl&#x5F00;&#x53D1;&#x73AF;&#x5883;</h2>
+<h3 id="&#x539F;&#x751F;&#x6784;&#x5EFA;"><a name="&#x539F;&#x751F;&#x6784;&#x5EFA;" class="plugin-anchor" href="#&#x539F;&#x751F;&#x6784;&#x5EFA;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x751F;&#x6784;&#x5EFA;</h3>
+<p>macos&#x3001;linux&#x3001;windows&#x3001;ios &#x548C; android &#x5E73;&#x53F0;&#x5747;&#x53EF;&#x652F;&#x6301; <em>QGroundControl</em> &#x7684;&#x6784;&#x5EFA;&#x3002; <em>QGroundControl</em> &#x4F7F;&#x7528; <a href="http://www.qt.io" target="_blank">Qt</a> &#x4F5C;&#x4E3A;&#x5176;&#x8DE8;&#x5E73;&#x53F0;&#x652F;&#x6301;&#x5E93;, &#x5E76;&#x5C06; <a href="http://doc.qt.io/qtcreator/index.html" target="_blank">QtCreator</a> &#x7528;&#x4F5C;&#x5176;&#x9ED8;&#x8BA4;&#x6784;&#x5EFA;&#x73AF;&#x5883;&#x3002;</p>
+<ul>
+<li>macOS&#xFF1A;v10.11&#x6216;&#x66F4;&#x9AD8;&#x7248;&#x672C;</li>
+<li>Ubuntu&#xFF1A;64&#x4F4D;&#xFF0C;gcc&#x7F16;&#x8BD1;&#x5668;</li>
+<li><strong>Windows:</strong> Vista or higher, <a href="#vs">Visual Studio 2017 compiler</a> (64 bit)</li>
+<li>iOS&#xFF1A;10.0&#x53CA;&#x66F4;&#x9AD8;&#x7248;&#x672C;</li>
+<li>Android&#xFF1A;Jelly Bean&#xFF08;4.1&#xFF09;&#x53CA;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x3002; &#x6807;&#x51C6;QGC&#x662F;&#x9488;&#x5BF9;ndk 19&#x7248;&#x672C;&#x6784;&#x5EFA;&#x7684;&#x3002;</li>
+<li><p><strong> Qt&#x7248;&#x672C;&#xFF1A;&lt;/ 0&gt; 5.12.6 </strong>&#xFF08;&#x4EC5;&#x9650;&#xFF09;&lt;/ 0&gt; <!-- NOTE 5.12.6 is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->&lt;/li&gt; &lt;/ul&gt; </p>
+<blockquote>
+<p>&#x63D0;&#x793A;: &#x6709;&#x5173;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;&#xFF1A;Qt 5&#x652F;&#x6301;&#x7684;&#x5E73;&#x53F0;&#x5217;&#x8868;&#x3002;</p>
+</blockquote>
+</li>
+</ul>
+<p><span></span></p>
+<pre><code>&gt; **Note** &#x672C;&#x5730;[CentOS Builds](../getting_started/CentOS.md)&#x4E5F;&#x5F97;&#x5230;&#x652F;&#x6301;&#xFF0C;&#x4F46;&#x9700;&#x5355;&#x72EC;&#x8BB0;&#x5F55;(&#x56E0;&#x4E3A;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x4E0D;&#x540C;)&#x3002;
+
+#### &#x5B89;&#x88C5; Visual Studio 2017(&#x4EC5;&#x9650;Windows&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;) {#vs}
+
+&#x8FD9;&#x4E2A;Windows&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x4ECE;&#x8FD9; [Visual Studio 2017 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (64 bit)&#x627E;&#x5230;&#x3002;
+
+&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8BF7;&#x9009;&#x62E9; *Desktop development with C++* &#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;
+
+![Visual Studio 2017 - Select Desktop Environment with C++](../../assets/getting_started/visual_studio_select_features.png)
+
+#### &#x5B89;&#x88C5;Qt
+
+You **need to install Qt as described below** instead of using pre-built packages from say, a Linux distribution, because *QGroundControl* needs access to private Qt headers.
+
+&#x5982;&#x4F55;&#x5B89;&#x88C5;Qt&#xFF1A;
+
+1. &#x4E0B;&#x8F7D;&#x5E76;&#x8FD0;&#x884C;[Qt Online Installer](http://www.qt.io/download-open-source) 
+    - **Ubuntu:** 
+        - &#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5C06;&#x4E0B;&#x8F7D;&#x7684;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x4E3A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF1A;`chmod + x` 
+        - &#x8BF7;&#x5B89;&#x88C5;&#x5230;&#x9ED8;&#x8BA4;&#x4F4D;&#x7F6E;, &#x4EE5;&#x4FBF;&#x4E0E; **./qgroundcontrol-start.sh** &#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;&#x5982;&#x679C;&#x5C06; Qt &#x5B89;&#x88C5;&#x5230;&#x975E;&#x9ED8;&#x8BA4;&#x4F4D;&#x7F6E;, &#x5219;&#x9700;&#x8981;&#x4FEE;&#x6539; **qgroundcontrol-start.sh** &#xFF0C;&#x624D;&#x80FD;&#x8FD0;&#x884C;&#x4E0B;&#x8F7D;&#x7684;&#x7EC4;&#x4EF6;&#x3002;
+
+2. &#x5728;&#x5B89;&#x88C5;&#x7A0B;&#x5E8F; &#x7684;*Select &#x7EC4;&#x4EF6; &lt;/0 &gt; &#x5BF9;&#x8BDD;&#x6846;&#x4E2D;, &#x9009;&#x62E9; {{ book.qt_version }}&#x3002;&lt;/p&gt; 
+
+    &gt; **Note** If the version needed is not displayed, check the archive (show archive and refresh).
+
+    &#x7136;&#x540E;&#xFF0C;&#x6309;&#x5982;&#x4E0B;&#x5411;&#x5BFC;&#xFF0C;&#x5B89;&#x88C5;&#x7EC4;&#x4EF6;:&lt;/li&gt; &lt;/ol&gt; 
+
+    - **Windows**: *MSVC 2017 64 bit*
+    - **MacOS**: *macOS*
+    - **Linux**: *Desktop gcc 64-bit*
+    - All:
+
+        - *Qt Charts* &lt;!-- and *Qt Remote Objects (TP)* --&gt;
+
+        - *Android ARMv7* (to build Android)
+
+            1. &#x5B89;&#x88C5;&#x9644;&#x52A0;&#x8F6F;&#x4EF6;&#x5305;&#xFF08;&#x7279;&#x5B9A;&#x4E8E;&#x5E73;&#x53F0;&#xFF09;
+    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
+    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
+    - Arch Linux: pacman -Sy speech-dispatcher
+    - Windows: USB Driver to connect to Pixhawk/PX4Flow/3DR Radio
+    - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
+
+    #### &#x4F7F;&#x7528;Qt Creator&#x6784;&#x5EFA;
+
+    1. &#x542F;&#x52A8;*Qt Creator*&#x5E76;&#x6253;&#x5F00;**qgroundcontrol.pro**&#x9879;&#x76EE;&#x3002;
+    2. &#x6839;&#x636E;&#x60A8;&#x7684;&#x9700;&#x6C42;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x5957;&#x4EF6;&#xFF1A; 
+        - OSX&#xFF1A;&#x684C;&#x9762;Qt {{book.qt_version}} clang 64 bit&gt;&#x6CE8;&#x610F;iOS&#x6784;&#x5EFA;&#x5FC5;&#x987B;&#x4F7F;&#x7528;XCode&#x6784;&#x5EFA;&#x3002;
+        - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC 64bit
+        - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2017 **64bit**
+        - **Android&#xFF1A;** Android&#x5E73;&#x53F0;&#x9700;&#x9009;&#x62E9;armeabi&#x7684;Android-v7a&#xFF08;GCC 4.9&#xFF0C;Qt {{ book.qt_version }}&#xFF09;
+
+    3. &#x4F7F;&#x7528;&quot;hammer&quot; (or &quot;play&quot;) &#x56FE;&#x6807;&#x6784;&#x5EFA;:
+
+        ![QtCreator&#x6784;&#x5EFA;&#x6309;&#x952E;](../../assets/getting_started/qt_creator_build_qgc.png)
+
+    ### Vagrant
+
+    [Vagrant](https://www.vagrantup.com/) can be used to build and run *QGroundControl* within a Linux virtual machine (the build can also be run on the host machine if it is compatible).
+
+    1. 1. &#x4E0B;&#x8F7D;&#x5E76;&#x5B89;&#x88C5;Vagrant
+    2. 2. &#x4ECE;QGroundControl&#x5B58;&#x50A8;&#x5E93;&#x7684;&#x6839;&#x76EE;&#x5F55;&#x8FD0;&#x884C;vagrant up
+    3. 3 .&#x4E3A;&#x4E86;&#x4F7F;&#x7528;&#x56FE;&#x5F62;&#x73AF;&#x5883;&#xFF0C;&#x8BF7;&#x8FD0;&#x884C;vagrant reload
+
+    ### &#x6240;&#x6709;&#x652F;&#x6301;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x9644;&#x52A0;&#x6784;&#x5EFA;&#x8BF4;&#x660E;
+
+    - **&#x5E76;&#x884C;&#x6784;&#x5EFA;&#xFF1A;** &#x5BF9;&#x4E8E;&#x975E;Windows&#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x6784;&#x5EFA;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;`-j&#xFF03;`&#x9009;&#x9879;&#x6765;&#x8FD0;&#x884C;&#x5E76;&#x884C;&#x6784;&#x5EFA;&#x3002;
+    - **&#x6784;&#x5EFA;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#xFF1A;** &#x53EF;&#x4EE5;&#x5728;`build_debug`&#x6216;`build_release`&#x76EE;&#x5F55;&#x4E2D;&#x627E;&#x5230;&#x5355;&#x4E2A;&#x6784;&#x5EFA;&#x6587;&#x4EF6;&#x7ED3;&#x679C;&#x3002; &#x53EF;&#x4EE5;&#x5728;`debug`&#x6216;`release`&#x76EE;&#x5F55;&#x4E2D;&#x627E;&#x5230;&#x6784;&#x5EFA;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x3002;
+    - **&#x5982;&#x679C;&#x5728;&#x8FD0;&#x884C;*QGroundControl*&#x65F6;&#x51FA;&#x73B0;&#x62A5;&#x9519;&#xFF1A;** `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version &apos;GLIBCXX_3.4.20&apos; not found.` &#xFF0C;&#x5219;&#x9700;&#x5C06;*gcc*&#x66F4;&#x65B0;&#x5230;&#x6700;&#x65B0;&#x7248;&#x672C;&#xFF0C;&#x6216;&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684;*libstdc++.6* &#xFF1A;`sudo apt-get install libstdc ++ 6 ` &#x3002;
+    - **&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1A;** &#x5982;&#x9700;&#x8FD0;&#x884C;[unit tests](../contribute/unit_tests.md),&#x8BF7;&#x4F7F;&#x7528;`UNITTEST_BUILD`&#x5B9A;&#x4E49; `debug`&#x6A21;&#x5F0F;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;&#x4E4B;&#x524D;&#x5C06;`deploy / qgroundcontrol-start.sh`&#x811A;&#x672C;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230; `debug`&#x76EE;&#x5F55;&#x4E2D;&#x3002;
+
+    ## &#x9009;&#x9879;/&#x4E0E;OS&#x76F8;&#x5173;&#x7684;&#x7279;&#x5B9A;&#x529F;&#x80FD;
+
+    *QGroundControl* has functionality that is dependent on the operating system and libraries installed by the user. The following sections describe these features, their dependencies, and how to disable/alter them during the build process. These features can be forcibly enabled/disabled by specifying additional values to qmake.
+
+    ### &#x89C6;&#x9891;&#x6D41;
+
+    Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
+
+    ## &#x6784;&#x5EFA; QGC &#x5B89;&#x88C5;&#x6587;&#x4EF6;
+
+    You can additionally create installation file(s) for *QGroundControl* as part of the normal build process.
+
+    &gt; **Note** &#x5728;Windows&#x4E0A;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x5148;&#x5B89;&#x88C5; [NSIS](https://sourceforge.net/projects/nsis/)&#x3002;
+
+    To add support for installation file creation you need to add `CONFIG+=installer` to your project file, or when you call *qmake*.
+
+    To do this in *Qt Creator*:
+
+    - &#x6253;&#x5F00; **&#x9879;&#x76EE; &gt; &#x6784;&#x5EFA; &gt; &#x6784;&#x5EFA;&#x6B65;&#x9AA4; &gt; qmake &gt; &#x989D;&#x5916;&#x53C2;&#x6570;**&#x3002;
+    - &#x8F93;&#x5165;`CONFIG+=installer`&#xFF1A; ![&#x5B89;&#x88C5;&#x5668;](../../assets/getting_started/qt_project_installer.png)
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 摘要">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="CentOS.html" class="navigation navigation-next " aria-label="Next page: 在 CentOS 上运行 QGC">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"入门 ","level":"1.2","depth":1,"next":{"title":"在 CentOS 上运行 QGC","level":"1.2.1","depth":2,"path":"getting_started/CentOS.md","ref":"getting_started/CentOS.md","articles":[]},"previous":{"title":"摘要","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"zh","gitbook":"*"},"file":{"path":"getting_started/README.md","mtime":"2020-05-01T19:06:04.924Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-01T19:06:38.896Z"},"basePath":"..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+    
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

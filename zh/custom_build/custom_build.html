@@ -1,0 +1,760 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>自定义构建 · QGroundControl Developer Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-dronecode/theme_styles.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="upstream_merge.html" />
+    
+    
+    <link rel="prev" href="../command_line_options.html" />
+    
+
+    </head>
+    <body>
+        
+    
+    <!-- ##HW Add dronecode menu -->
+    <div id="common_dronecode_menu">
+
+      <div class="common_menu_logo large_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png" alt="Dronecode logo (large)" />
+        </a>
+      </div>
+      <div class="common_menu_logo small_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png" alt="Dronecode logo (small)" />
+        </a>
+      </div>
+      
+      <div class="common_menu_options">
+        
+            <div class="common_dronecode_menu_item"><a href="http://px4.io/">PX4</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://qgroundcontrol.com/">QGroundControl</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://qgroundcontrol.com/">QGC</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://www.dronecode.org/sdk/">SDK</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://mavlink.io/en/">MAVLink</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="https://www.dronecode.org/documentation/">Documentation</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="https://www.dronecode.org/documentation/">Docs</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://discuss.px4.io/">Support</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://discuss.px4.io/">Help</a></div>
+        
+      </div>
+    </div>
+    
+<!-- ##HW END Add dronecode menu -->
+    
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    摘要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting_started/">
+            
+                <a href="../getting_started/">
+            
+                    
+                    入门 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../getting_started/CentOS.html">
+            
+                <a href="../getting_started/CentOS.html">
+            
+                    
+                    在 CentOS 上运行 QGC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../communication_flow.html">
+            
+                <a href="../communication_flow.html">
+            
+                    
+                    通信流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../firmware_plugin.html">
+            
+                <a href="../firmware_plugin.html">
+            
+                    
+                    固件插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../classes/">
+            
+                <a href="../classes/">
+            
+                    
+                    类层次结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ui_design/">
+            
+                <a href="../ui_design/">
+            
+                    
+                    用户接口设计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../ui_design/multi_device_pattern.html">
+            
+                <a href="../ui_design/multi_device_pattern.html">
+            
+                    
+                    多设备设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../ui_design/font_palette.html">
+            
+                <a href="../ui_design/font_palette.html">
+            
+                    
+                    字体和调色板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../ui_design/controls.html">
+            
+                <a href="../ui_design/controls.html">
+            
+                    
+                    UI控件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../fact_system.html">
+            
+                <a href="../fact_system.html">
+            
+                    
+                    事实系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../views/">
+            
+                <a href="../views/">
+            
+                    
+                    顶级视图
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../views/settings.html">
+            
+                <a href="../views/settings.html">
+            
+                    
+                    设置视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../views/setup.html">
+            
+                <a href="../views/setup.html">
+            
+                    
+                    设置视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../views/plan.html">
+            
+                <a href="../views/plan.html">
+            
+                    
+                    规划视图 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../views/fly.html">
+            
+                <a href="../views/fly.html">
+            
+                    
+                    飞行视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../file_formats/">
+            
+                <a href="../file_formats/">
+            
+                    
+                    File Formats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../tools/">
+            
+                <a href="../tools/">
+            
+                    
+                    开发者工具 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../tools/mock_link.html">
+            
+                <a href="../tools/mock_link.html">
+            
+                    
+                    模拟链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../command_line_options.html">
+            
+                <a href="../command_line_options.html">
+            
+                    
+                    命令行选项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12" data-path="custom_build.html">
+            
+                <a href="custom_build.html">
+            
+                    
+                    自定义构建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="upstream_merge.html">
+            
+                <a href="upstream_merge.html">
+            
+                    
+                    从QGC repro更新自定义构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../contribute/">
+            
+                <a href="../contribute/">
+            
+                    
+                    代码提交
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../contribute/coding_style.html">
+            
+                <a href="../contribute/coding_style.html">
+            
+                    
+                    编码风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../contribute/unit_tests.html">
+            
+                <a href="../contribute/unit_tests.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../contribute/pull_requests.html">
+            
+                <a href="../contribute/pull_requests.html">
+            
+                    
+                    请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../contribute/licences.html">
+            
+                <a href="../contribute/licences.html">
+            
+                    
+                    许可证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dronecode快捷方式</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://docs.qgroundcontrol.com/en/">
+            
+                    
+                    QGroundControl用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://docs.px4.io/en/">
+            
+                    
+                    PX4用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <a target="_blank" href="https://dev.px4.io/en/">
+            
+                    
+                    PX4开发人员指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <a target="_blank" href="https://mavlink.io/en/">
+            
+                    
+                    MAVLink指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <a target="_blank" href="https://mavsdk.mavlink.io/">
+            
+                    
+                    MAVSDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <a target="_blank" href="https://camera-manager.dronecode.org/en/">
+            
+                    
+                    Dronecode相机管理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >自定义构建</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x81EA;&#x5B9A;&#x4E49;&#x6784;&#x5EFA;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x6784;&#x5EFA;" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x6784;&#x5EFA;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49;&#x6784;&#x5EFA;</h1>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x6784;&#x5EFA;&#x5141;&#x8BB8;&#x7B2C;&#x4E09;&#x65B9;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;QGC&#x7248;&#x672C;&#xFF0C;&#x4F7F;&#x5176;&#x80FD;&#x591F;&#x8F7B;&#x677E;&#x8DDF;&#x4E0A;&#x5E38;&#x89C4;QGC&#x4E2D;&#x6240;&#x505A;&#x7684;&#x66F4;&#x6539;&#x3002; QGC&#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x67B6;&#x6784;&#xFF0C;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x5BF9;QGC&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x548C;&#x6DFB;&#x52A0;&#x65B0;&#x529F;&#x80FD;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../command_line_options.html" class="navigation navigation-prev " aria-label="Previous page: 命令行选项">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="upstream_merge.html" class="navigation navigation-next " aria-label="Next page: 从QGC repro更新自定义构建">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"自定义构建","level":"1.12","depth":1,"next":{"title":"从QGC repro更新自定义构建","level":"1.12.1","depth":2,"path":"custom_build/upstream_merge.md","ref":"custom_build/upstream_merge.md","articles":[]},"previous":{"title":"命令行选项","level":"1.11","depth":1,"path":"command_line_options.md","ref":"command_line_options.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"zh","gitbook":"*"},"file":{"path":"custom_build/custom_build.md","mtime":"2020-05-01T19:06:04.924Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-01T19:06:38.896Z"},"basePath":"..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+    
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

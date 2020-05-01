@@ -1,0 +1,1639 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Plan · QGroundControl Developer Guide</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-dronecode/theme_styles.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mavlink.html" />
+    
+    
+    <link rel="prev" href="parameters.html" />
+    
+
+    </head>
+    <body>
+        
+    
+    <!-- ##HW Add dronecode menu -->
+    <div id="common_dronecode_menu">
+
+      <div class="common_menu_logo large_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png" alt="Dronecode logo (large)" />
+        </a>
+      </div>
+      <div class="common_menu_logo small_version">
+        <a href="https://www.dronecode.org/">
+          <img src="../../gitbook/gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png" alt="Dronecode logo (small)" />
+        </a>
+      </div>
+      
+      <div class="common_menu_options">
+        
+            <div class="common_dronecode_menu_item"><a href="http://px4.io/">PX4</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://qgroundcontrol.com/">QGroundControl</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://qgroundcontrol.com/">QGC</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://www.dronecode.org/sdk/">SDK</a></div>
+            <div class="common_dronecode_menu_item"><a href="https://mavlink.io/en/">MAVLink</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="https://www.dronecode.org/documentation/">Documentation</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="https://www.dronecode.org/documentation/">Docs</a></div>
+            <div class="common_dronecode_menu_item large_version"><a href="http://discuss.px4.io/">Support</a></div>
+            <div class="common_dronecode_menu_item small_version"><a href="http://discuss.px4.io/">Help</a></div>
+        
+      </div>
+    </div>
+    
+<!-- ##HW END Add dronecode menu -->
+    
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../getting_started/">
+            
+                <a href="../getting_started/">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../getting_started/CentOS.html">
+            
+                <a href="../getting_started/CentOS.html">
+            
+                    
+                    Using QGC on CentOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ReleaseBranchingProcess.html">
+            
+                <a href="../ReleaseBranchingProcess.html">
+            
+                    
+                    QGC Release/Branching Process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../communication_flow.html">
+            
+                <a href="../communication_flow.html">
+            
+                    
+                    Communication Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../firmware_plugin.html">
+            
+                <a href="../firmware_plugin.html">
+            
+                    
+                    Plugin Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../classes/">
+            
+                <a href="../classes/">
+            
+                    
+                    Class Hierarchy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ui_design/">
+            
+                <a href="../ui_design/">
+            
+                    
+                    User Interface Design
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../ui_design/multi_device_pattern.html">
+            
+                <a href="../ui_design/multi_device_pattern.html">
+            
+                    
+                    Multi-Device Design Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../ui_design/font_palette.html">
+            
+                <a href="../ui_design/font_palette.html">
+            
+                    
+                    Font and Colour Palette
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../ui_design/controls.html">
+            
+                <a href="../ui_design/controls.html">
+            
+                    
+                    UI Controls
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../fact_system.html">
+            
+                <a href="../fact_system.html">
+            
+                    
+                    Fact System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../views/">
+            
+                <a href="../views/">
+            
+                    
+                    Top Level Views
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../views/settings.html">
+            
+                <a href="../views/settings.html">
+            
+                    
+                    Settings View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../views/setup.html">
+            
+                <a href="../views/setup.html">
+            
+                    
+                    Setup View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../views/plan.html">
+            
+                <a href="../views/plan.html">
+            
+                    
+                    Plan View
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../plan/MissionCommandTree.html">
+            
+                <a href="../plan/MissionCommandTree.html">
+            
+                    
+                    Dynamic UI for mission item editing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../views/fly.html">
+            
+                <a href="../views/fly.html">
+            
+                    
+                    Fly View
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    File Formats
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="parameters.html">
+            
+                <a href="parameters.html">
+            
+                    
+                    Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.2" data-path="plan.html">
+            
+                <a href="plan.html">
+            
+                    
+                    Plan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="mavlink.html">
+            
+                <a href="mavlink.html">
+            
+                    
+                    MAVLink Logs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../tools/">
+            
+                <a href="../tools/">
+            
+                    
+                    Developer Tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../tools/mock_link.html">
+            
+                <a href="../tools/mock_link.html">
+            
+                    
+                    Mock Link
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../command_line_options.html">
+            
+                <a href="../command_line_options.html">
+            
+                    
+                    Command Line Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../custom_build/custom_build.html">
+            
+                <a href="../custom_build/custom_build.html">
+            
+                    
+                    Custom Builds
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../custom_build/CreateRepos.html">
+            
+                <a href="../custom_build/CreateRepos.html">
+            
+                    
+                    Initial Repository Setup For Custom Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../custom_build/Plugins.html">
+            
+                <a href="../custom_build/Plugins.html">
+            
+                    
+                    Custom Build Plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../custom_build/ResourceOverride.html">
+            
+                <a href="../custom_build/ResourceOverride.html">
+            
+                    
+                    Resources Overrides
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../custom_build/ReleaseBranchingProcess.html">
+            
+                <a href="../custom_build/ReleaseBranchingProcess.html">
+            
+                    
+                    Release/Branching Process For Custom Builds
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../contribute/">
+            
+                <a href="../contribute/">
+            
+                    
+                    Code Submission
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../contribute/coding_style.html">
+            
+                <a href="../contribute/coding_style.html">
+            
+                    
+                    Coding Style
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../contribute/unit_tests.html">
+            
+                <a href="../contribute/unit_tests.html">
+            
+                    
+                    Unit Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../contribute/pull_requests.html">
+            
+                <a href="../contribute/pull_requests.html">
+            
+                    
+                    Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../contribute/licences.html">
+            
+                <a href="../contribute/licences.html">
+            
+                    
+                    Licenses
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dronecode Shortcuts</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://docs.qgroundcontrol.com/en/">
+            
+                    
+                    QGroundControl User Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://docs.px4.io/en/">
+            
+                    
+                    PX4 User Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <a target="_blank" href="https://dev.px4.io/en/">
+            
+                    
+                    PX4 Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <a target="_blank" href="https://mavlink.io/en/">
+            
+                    
+                    MAVLink Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <a target="_blank" href="https://mavsdk.mavlink.io/">
+            
+                    
+                    MAVSDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <a target="_blank" href="https://camera-manager.dronecode.org/en/">
+            
+                    
+                    Dronecode Camera Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Plan</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="plan-file-format"><a name="plan-file-format" class="plugin-anchor" href="#plan-file-format"><i class="fa fa-link" aria-hidden="true"></i></a>Plan File Format</h1>
+<p>Plan files are stored in JSON file format and contain mission items and (optional) geo-fence and rally-points.
+Below you can see the top level format of a Plan file</p>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
+<p> This is &quot;near-minimal&quot; - a plan must contain at least one mission item.
+  The plan fence and rally points are also used in modes when no mission is running.</p>
+</blockquote>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;fileType&quot;</span>: <span class="hljs-string">&quot;Plan&quot;</span>,
+    <span class="hljs-string">&quot;geoFence&quot;</span>: {
+        <span class="hljs-string">&quot;circles&quot;</span>: [
+        ],
+        <span class="hljs-string">&quot;polygons&quot;</span>: [
+        ],
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">2</span>
+    },
+    <span class="hljs-string">&quot;groundStation&quot;</span>: <span class="hljs-string">&quot;QGroundControl&quot;</span>,
+    <span class="hljs-string">&quot;mission&quot;</span>: {
+    },
+    <span class="hljs-string">&quot;rallyPoints&quot;</span>: {
+        <span class="hljs-string">&quot;points&quot;</span>: [
+        ],
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">2</span>
+    },
+    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<p>The main fields are:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version for this file. Current version is 1.</td>
+</tr>
+<tr>
+<td><code>fileType</code></td>
+<td>Must be <code>&quot;Plan&quot;</code>.</td>
+</tr>
+<tr>
+<td><code>groundStation</code></td>
+<td>The name of the ground station which created this file (here <em>QGroundControl</em>)</td>
+</tr>
+<tr>
+<td><a href="#mission"><code>mission</code></a></td>
+<td>The mission associated with this flight plan.</td>
+</tr>
+<tr>
+<td><a href="#geofence"><code>geoFence</code></a></td>
+<td>(Optional) Geofence information for this plan.</td>
+</tr>
+<tr>
+<td><a href="#rally_points"><code>rallyPoints</code></a></td>
+<td>(Optional) Rally/Safe point information for this plan</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mission"><a name="mission" class="plugin-anchor" href="#mission"><i class="fa fa-link" aria-hidden="true"></i></a>Mission Object </h2>
+<p>The structure of the mission object is shown below.
+The <code>items</code> field contains a comma-separated list of mission items (it must contain at least one mission item, as shown below).
+The list may be a mix of both <a href="#mission_simple_item">SimpleItem</a> and <a href="#mission_complex_item">ComplexItem</a> objects.</p>
+<pre><code class="lang-json">    <span class="hljs-string">&quot;mission&quot;</span>: {
+        <span class="hljs-string">&quot;cruiseSpeed&quot;</span>: <span class="hljs-number">15</span>,
+        <span class="hljs-string">&quot;firmwareType&quot;</span>: <span class="hljs-number">12</span>,
+        <span class="hljs-string">&quot;hoverSpeed&quot;</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-string">&quot;items&quot;</span>: [
+            {
+                <span class="hljs-string">&quot;AMSLAltAboveTerrain&quot;</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-string">&quot;Altitude&quot;</span>: <span class="hljs-number">50</span>,
+                <span class="hljs-string">&quot;AltitudeMode&quot;</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;autoContinue&quot;</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">&quot;command&quot;</span>: <span class="hljs-number">22</span>,
+                <span class="hljs-string">&quot;doJumpId&quot;</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;frame&quot;</span>: <span class="hljs-number">3</span>,
+                <span class="hljs-string">&quot;params&quot;</span>: [
+                    <span class="hljs-number">15</span>,
+                    <span class="hljs-number">0</span>,
+                    <span class="hljs-number">0</span>,
+                    <span class="hljs-literal">null</span>,
+                    <span class="hljs-number">47.3985099</span>,
+                    <span class="hljs-number">8.5451002</span>,
+                    <span class="hljs-number">50</span>
+                ],
+                <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;SimpleItem&quot;</span>
+            }
+        ],
+        <span class="hljs-string">&quot;plannedHomePosition&quot;</span>: [
+            <span class="hljs-number">47.3977419</span>,
+            <span class="hljs-number">8.545594</span>,
+            <span class="hljs-number">487.989</span>
+        ],
+        <span class="hljs-string">&quot;vehicleType&quot;</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">2</span>
+    },
+</code></pre>
+<p>The following values are required:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version for the mission object. Current version is 2.</td>
+</tr>
+<tr>
+<td><code>firmwareType</code></td>
+<td>The firmware type for which this mission was created. This is one of the <a href="https://mavlink.io/en/messages/common.html#MAV_AUTOPILOT" target="_blank">MAV_AUTOPILOT</a> enum values. </td>
+</tr>
+<tr>
+<td><code>vehicleType</code></td>
+<td>The vehicle type for which this mission was created. This is one of the <a href="https://mavlink.io/en/messages/common.html#MAV_TYPE" target="_blank">MAV_TYPE</a> enum values.</td>
+</tr>
+<tr>
+<td><code>cruiseSpeed</code></td>
+<td>The default forward speed for Fixed wing or VTOL vehicles (i.e. when moving between waypoints).</td>
+</tr>
+<tr>
+<td><code>hoverSpeed</code></td>
+<td>The default forward speed for multi-rotor vehicles.</td>
+</tr>
+<tr>
+<td><code>items</code></td>
+<td>The list of mission item objects associated with the mission . The list may contain either/both <a href="#mission_simple_item">SimpleItem</a> and <a href="#mission_complex_item">ComplexItem</a> objects.</td>
+</tr>
+<tr>
+<td><code>plannedHomePosition</code></td>
+<td>The planned home position is shown on the map and used for mission planning when no vehicle is connected. The array values shown above are (from top): latitude, longitude and AMSL altitude.</td>
+</tr>
+</tbody>
+</table>
+<p>The format of the simple and complex items is given below.</p>
+<h3 id="mission_simple_item"><a name="mission_simple_item" class="plugin-anchor" href="#mission_simple_item"><i class="fa fa-link" aria-hidden="true"></i></a><code>SimpleItem</code> - Simple Mission Item </h3>
+<p>A simple item represents a single MAVLink <a href="https://mavlink.io/en/messages/common.html#MISSION_ITEM" target="_blank">MISSION_ITEM</a> command.</p>
+<pre><code>            {
+                &quot;AMSLAltAboveTerrain&quot;: null,
+                &quot;Altitude&quot;: 50,
+                &quot;AltitudeMode&quot;: 0,
+                &quot;autoContinue&quot;: true,
+                &quot;command&quot;: 22,
+                &quot;doJumpId&quot;: 1,
+                &quot;frame&quot;: 3,
+                &quot;params&quot;: [
+                    15,
+                    0,
+                    0,
+                    null,
+                    47.3985099,
+                    8.5451002,
+                    50
+                ],
+                &quot;type&quot;: &quot;SimpleItem&quot;
+            }
+</code></pre><p>The field mapping is shown below.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td><code>SimpleItem</code> for a simple item</td>
+</tr>
+<tr>
+<td><code>AMSLAltAboveTerrain</code></td>
+<td>Altitude value shown to the user.</td>
+</tr>
+<tr>
+<td><code>Altitude</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>AltitudeMode</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>autoContinue</code></td>
+<td><a href="https://mavlink.io/en/messages/common.html#MISSION_ITEM" target="_blank">MISSION_ITEM</a>.autoContinue</td>
+</tr>
+<tr>
+<td><code>command</code></td>
+<td>The command (<a href="https://mavlink.io/en/messages/common.html#MAV_CMD" target="_blank">MAV_CMD</a>) for this mission item - see <a href="https://mavlink.io/en/messages/common.html#MISSION_ITEM" target="_blank">MISSION_ITEM</a>.command.</td>
+</tr>
+<tr>
+<td><code>doJumpId</code></td>
+<td>The target id for the current mission item in DO_JUMP commands. These are auto-numbered from 1.</td>
+</tr>
+<tr>
+<td><code>frame</code></td>
+<td><a href="https://mavlink.io/en/messages/common.html#MAV_FRAME" target="_blank">MAV_FRAME</a> (see <a href="https://mavlink.io/en/messages/common.html#MISSION_ITEM" target="_blank">MISSION_ITEM</a>.frame)</td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td><a href="https://mavlink.io/en/messages/common.html#MISSION_ITEM" target="_blank">MISSION_ITEM</a>.param1,2,3,4,x,y,z (values depends on the particular <a href="https://mavlink.io/en/messages/common.html#MAV_CMD" target="_blank">MAV_CMD</a>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mission_complex_item"><a name="mission_complex_item" class="plugin-anchor" href="#mission_complex_item"><i class="fa fa-link" aria-hidden="true"></i></a>Complex Mission Item </h3>
+<p>A complex item is a higher level encapsulation of multiple <code>MISSION_ITEM</code> objects treated as a single entity.</p>
+<p>There are currently three types of complex mission items:</p>
+<ul>
+<li><a href="#survey">Survey</a></li>
+<li><a href="#corridor_scan">Corridor Scan</a></li>
+<li><a href="#structure_scan">Structure Scan</a></li>
+</ul>
+<h4 id="survey"><a name="survey" class="plugin-anchor" href="#survey"><i class="fa fa-link" aria-hidden="true"></i></a>Survey - Complex Mission Item </h4>
+<p>The object definition for a <code>Survey</code> complex mission item is given below. </p>
+<pre><code>{
+                &quot;TransectStyleComplexItem&quot;: {
+                    ...
+                },
+                &quot;angle&quot;: 0,
+                &quot;complexItemType&quot;: &quot;survey&quot;,
+                &quot;entryLocation&quot;: 0,
+                &quot;flyAlternateTransects&quot;: false,
+                &quot;polygon&quot;: [
+                    [
+                        -37.75170619863631,
+                        144.98414811224316
+                    ],
+                    ...
+                    [
+                        -37.75170619863631,
+                        144.99457681259048
+                    ]
+                ],
+                &quot;type&quot;: &quot;ComplexItem&quot;,
+                &quot;version&quot;: 4
+            },
+</code></pre><p>Complex items have these values associated with them:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version number for this <code>survey</code> definition. Current version is 3.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>ComplexItem</code> (this is a complex item).</td>
+</tr>
+<tr>
+<td><code>complexItemType</code></td>
+<td><code>survey</code></td>
+</tr>
+<tr>
+<td><a href="#TransectStyleComplexItem"><code>TransectStyleComplexItem</code></a></td>
+<td>The common base definition for Survey and CorridorScan complex items.</td>
+</tr>
+<tr>
+<td><code>angle</code></td>
+<td>The angle for the transect paths (degrees).</td>
+</tr>
+<tr>
+<td><code>entryLocation</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>flyAlternateTransects</code></td>
+<td>If true, the vehicle will skip every other transect and then come back at the end and fly these alternates. This can be used for fixed wing aircraft whn the turnaround would be too acute for the vehicle to make the turn.</td>
+</tr>
+<tr>
+<td><code>polygon</code></td>
+<td>The polygon array which represents the polygonal survey area. Each point is a latitude, longitude pair for a polygon vertex.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="corridor_scan"><a name="corridor_scan" class="plugin-anchor" href="#corridor_scan"><i class="fa fa-link" aria-hidden="true"></i></a>Corridor Scan </h4>
+<p>The object definition for a <code>CorridorScan</code> complex mission item is given below. </p>
+<pre><code>            {
+                &quot;CorridorWidth&quot;: 50,
+                &quot;EntryPoint&quot;: 0,
+                &quot;TransectStyleComplexItem&quot;: {
+                    ...
+                    },
+                },
+                &quot;complexItemType&quot;: &quot;CorridorScan&quot;,
+                &quot;polyline&quot;: [
+                    [
+                        -37.75234887156983,
+                        144.9893624624168
+                    ],
+                    ...
+                    [
+                        -37.75491914850321,
+                        144.9893624624168
+                    ]
+                ],
+                &quot;type&quot;: &quot;ComplexItem&quot;,
+                &quot;version&quot;: 2
+            },
+</code></pre><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version for this <code>CorridorScan</code> definition. Current version is 3.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>ComplexItem</code> (this is a complex item).</td>
+</tr>
+<tr>
+<td><code>complexItemType</code></td>
+<td><code>CorridorScan</code></td>
+</tr>
+<tr>
+<td><code>CorridorWidth</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>EntryPoint</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><a href="#TransectStyleComplexItem"><code>TransectStyleComplexItem</code></a></td>
+<td>The common base definition for Survey and CorridorScan complex items.</td>
+</tr>
+<tr>
+<td><code>polyline</code></td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure_scan"><a name="structure_scan" class="plugin-anchor" href="#structure_scan"><i class="fa fa-link" aria-hidden="true"></i></a>Structure Scan </h4>
+<p>The object definition for a <code>StructureScan</code> complex mission item is given below. </p>
+<pre><code class="lang-json">            {
+                <span class="hljs-string">&quot;Altitude&quot;</span>: <span class="hljs-number">50</span>,
+                <span class="hljs-string">&quot;CameraCalc&quot;</span>: {
+                    <span class="hljs-string">&quot;AdjustedFootprintFrontal&quot;</span>: <span class="hljs-number">25</span>,
+                    <span class="hljs-string">&quot;AdjustedFootprintSide&quot;</span>: <span class="hljs-number">25</span>,
+                    <span class="hljs-string">&quot;CameraName&quot;</span>: <span class="hljs-string">&quot;Manual (no camera specs)&quot;</span>,
+                    <span class="hljs-string">&quot;DistanceToSurface&quot;</span>: <span class="hljs-number">10</span>,
+                    <span class="hljs-string">&quot;DistanceToSurfaceRelative&quot;</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">1</span>
+                },
+                <span class="hljs-string">&quot;Layers&quot;</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;StructureHeight&quot;</span>: <span class="hljs-number">25</span>,
+                <span class="hljs-string">&quot;altitudeRelative&quot;</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">&quot;complexItemType&quot;</span>: <span class="hljs-string">&quot;StructureScan&quot;</span>,
+                <span class="hljs-string">&quot;polygon&quot;</span>: [
+                    [
+                        <span class="hljs-number">-37.753184359536355</span>,
+                        <span class="hljs-number">144.98879374063998</span>
+                    ],
+                    ...
+                    [
+                        <span class="hljs-number">-37.75408368012594</span>,
+                        <span class="hljs-number">144.98879374063998</span>
+                    ]
+                ],
+                <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;ComplexItem&quot;</span>,
+                <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">2</span>
+            }
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version for this <code>StructureScan</code> definition. Current version is 2.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>ComplexItem</code> (this is a complex item).</td>
+</tr>
+<tr>
+<td><code>complexItemType</code></td>
+<td><code>StructureScan</code></td>
+</tr>
+<tr>
+<td><code>Altitude</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><a href="#CameraCalc"><code>CameraCalc</code></a></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>Layers</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>StructureHeight</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>altitudeRelative</code></td>
+<td><code>true</code>: <code>altitude</code> is relative to home, <code>false</code>: <code>altitude</code> is AMSL.</td>
+</tr>
+<tr>
+<td><code>polygon</code></td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<h4 id="TransectStyleComplexItem"><a name="TransectStyleComplexItem" class="plugin-anchor" href="#TransectStyleComplexItem"><i class="fa fa-link" aria-hidden="true"></i></a><code>TransectStyleComplexItem</code> </h4>
+<p><code>TransectStyleComplexItem</code> contains the common base definition for <a href="#survey"><code>survey</code></a> and <a href="#CorridorScan"><code>CorridorScan</code></a> complex items.</p>
+<pre><code class="lang-json">                <span class="hljs-string">&quot;TransectStyleComplexItem&quot;</span>: {
+                    <span class="hljs-string">&quot;CameraCalc&quot;</span>: {
+                        ...
+                    },
+                    <span class="hljs-string">&quot;CameraTriggerInTurnAround&quot;</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-string">&quot;FollowTerrain&quot;</span>: <span class="hljs-literal">false</span>,
+                    <span class="hljs-string">&quot;HoverAndCapture&quot;</span>: <span class="hljs-literal">false</span>,
+                    <span class="hljs-string">&quot;Items&quot;</span>: [
+                        ...
+                    ],
+                    <span class="hljs-string">&quot;Refly90Degrees&quot;</span>: <span class="hljs-literal">false</span>,
+                    <span class="hljs-string">&quot;TurnAroundDistance&quot;</span>: <span class="hljs-number">10</span>,
+                    <span class="hljs-string">&quot;VisualTransectPoints&quot;</span>: [
+                        [
+                            <span class="hljs-number">-37.75161626657736</span>,
+                            <span class="hljs-number">144.98414811224316</span>
+                        ],
+                        ...
+                        [
+                            <span class="hljs-number">-37.75565155437309</span>,
+                            <span class="hljs-number">144.99438539496475</span>
+                        ]
+                    ],
+                    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">1</span>
+                },
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version for this <code>TransectStyleComplexItem</code> definition. Current version is 1.</td>
+</tr>
+<tr>
+<td><a href="#CameraCalc"><code>CameraCalc</code></a></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>CameraTriggerInTurnAround</code></td>
+<td>? (boolean)</td>
+</tr>
+<tr>
+<td><code>FollowTerrain</code></td>
+<td>? (boolean)</td>
+</tr>
+<tr>
+<td><code>HoverAndCapture</code></td>
+<td>? (boolean)</td>
+</tr>
+<tr>
+<td><code>Items</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>Refly90Degrees</code></td>
+<td>? (boolean)</td>
+</tr>
+<tr>
+<td><code>TurnAroundDistance</code></td>
+<td>The distance to fly past the polygon edge prior to turning for the next transect.</td>
+</tr>
+<tr>
+<td><code>VisualTransectPoints</code></td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<h5 id="CameraCalc"><a name="CameraCalc" class="plugin-anchor" href="#CameraCalc"><i class="fa fa-link" aria-hidden="true"></i></a>CameraCalc </h5>
+<p>The <code>CameraCalc</code> contains camera information used for a survey, corridor or structure scan.</p>
+<pre><code>                    &quot;CameraCalc&quot;: {
+                        &quot;AdjustedFootprintFrontal&quot;: 272.4,
+                        &quot;AdjustedFootprintSide&quot;: 409.2,
+                        &quot;CameraName&quot;: &quot;Sony ILCE-QX1&quot;,
+                        &quot;DistanceToSurface&quot;: 940.6896551724138,
+                        &quot;DistanceToSurfaceRelative&quot;: true,
+                        &quot;FixedOrientation&quot;: false,
+                        &quot;FocalLength&quot;: 16,
+                        &quot;FrontalOverlap&quot;: 70,
+                        &quot;ImageDensity&quot;: 25,
+                        &quot;ImageHeight&quot;: 3632,
+                        &quot;ImageWidth&quot;: 5456,
+                        &quot;Landscape&quot;: true,
+                        &quot;MinTriggerInterval&quot;: 0,
+                        &quot;SensorHeight&quot;: 15.4,
+                        &quot;SensorWidth&quot;: 23.2,
+                        &quot;SideOverlap&quot;: 70,
+                        &quot;ValueSetIsDistance&quot;: false,
+                        &quot;version&quot;: 1
+                    },
+</code></pre><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version for this <code>CameraCalc</code> definition. Current version is 1.</td>
+</tr>
+<tr>
+<td><code>AdjustedFootprintFrontal</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>AdjustedFootprintSide</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>DistanceToSurface</code></td>
+<td>? Units?</td>
+</tr>
+<tr>
+<td><code>DistanceToSurfaceRelative</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>CameraName</code></td>
+<td>Name of camera being used (must correspond to one of the cameras known to <em>QGroundControl</em> or: <code>Manual (no camera specs)</code> for manual setup, <code>Custom Camera</code> for a custom setup. The keys listed after this point are not specified for a &quot;Manual&quot; camera definition.</td>
+</tr>
+<tr>
+<td><code>FixedOrientation</code></td>
+<td>? (boolean)</td>
+</tr>
+<tr>
+<td><code>FocalLength</code></td>
+<td>Focal length of camera lens in millimeters.</td>
+</tr>
+<tr>
+<td><code>FrontalOverlap</code></td>
+<td>Percentage of frontal image overlap.</td>
+</tr>
+<tr>
+<td><code>ImageDensity</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>ImageHeight</code></td>
+<td>Image height in px</td>
+</tr>
+<tr>
+<td><code>ImageWidth</code></td>
+<td>Image width in px</td>
+</tr>
+<tr>
+<td><code>Landscape</code></td>
+<td><code>true</code>: Camera installed in landscape orientation on vehicle, <code>false</code>: Camera installed in portrait orientation on vehicle.</td>
+</tr>
+<tr>
+<td><code>MinTriggerInterval</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>SensorHeight</code></td>
+<td>Sensor height in millimeters.</td>
+</tr>
+<tr>
+<td><code>SensorWidth</code></td>
+<td>Sensor width in millimeters.</td>
+</tr>
+<tr>
+<td><code>SideOverlap</code></td>
+<td>Percentage of side image overlap.</td>
+</tr>
+<tr>
+<td><code>ValueSetIsDistance</code></td>
+<td>? (boolean)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="geofence"><a name="geofence" class="plugin-anchor" href="#geofence"><i class="fa fa-link" aria-hidden="true"></i></a>GeoFence </h2>
+<p>Geofence information is optional. 
+The plan can contain an arbitrary number of geofences defined in terms of polygons and circles.</p>
+<p>The minimal definition is shown below. </p>
+<pre><code class="lang-json">    <span class="hljs-string">&quot;geoFence&quot;</span>: {
+        <span class="hljs-string">&quot;circles&quot;</span>: [
+        ],
+        <span class="hljs-string">&quot;polygons&quot;</span>: [
+        ],
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">2</span>
+    },
+</code></pre>
+<p>The fields are:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version number for the geofence plan format. The documented version is 2.</td>
+</tr>
+<tr>
+<td><a href="#circle_geofence"><code>circles</code></a></td>
+<td>List containing circle geofence definitions (comma separated).</td>
+</tr>
+<tr>
+<td><a href="#polygon_geofence"><code>polygons</code></a></td>
+<td>List containing polygon geofence definitions  (comma separated).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="circle_geofence"><a name="circle_geofence" class="plugin-anchor" href="#circle_geofence"><i class="fa fa-link" aria-hidden="true"></i></a>Circle Geofence </h3>
+<p>Each circular geofence is defined in a separate item, as shown below (multiple comma-separated items can be defined).
+The items define the centre and radius of the circle, and whether or not the specific geofence is activated.</p>
+<pre><code class="lang-json">            {
+                <span class="hljs-string">&quot;circle&quot;</span>: {
+                    <span class="hljs-string">&quot;center&quot;</span>: [
+                        <span class="hljs-number">47.39756763610029</span>,
+                        <span class="hljs-number">8.544649762407738</span>
+                    ],
+                    <span class="hljs-string">&quot;radius&quot;</span>: <span class="hljs-number">319.85</span>
+                },
+                <span class="hljs-string">&quot;inclusion&quot;</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">1</span>
+            }
+</code></pre>
+<p>The fields are:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version number for the geofence &quot;circle&quot; plan format. The documented version is 1.</td>
+</tr>
+<tr>
+<td><code>circle</code></td>
+<td>The definition of the circle. Includes <code>centre</code> (latitude, longitude) and <code>radisu</code> as shown above.</td>
+</tr>
+<tr>
+<td><code>inclusion</code></td>
+<td>Whether or not the geofence is enabled (true) or disabled.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="polygon_geofence"><a name="polygon_geofence" class="plugin-anchor" href="#polygon_geofence"><i class="fa fa-link" aria-hidden="true"></i></a>Polygon Geofence </h3>
+<p>Each polygon geofence is defined in a separate item, as shown below (multiple comma-separated items can be defined).
+The geofence includes a set of points defined with a clockwise winding (i.e. they must enclose an area).</p>
+<pre><code class="lang-json">            {
+                <span class="hljs-string">&quot;inclusion&quot;</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">&quot;polygon&quot;</span>: [
+                    [
+                        <span class="hljs-number">47.39807773798406</span>,
+                        <span class="hljs-number">8.543834631785785</span>
+                    ],
+                    [
+                        <span class="hljs-number">47.39983519888905</span>,
+                        <span class="hljs-number">8.550024648373267</span>
+                    ],
+                    [
+                        <span class="hljs-number">47.39641100087146</span>,
+                        <span class="hljs-number">8.54499282423751</span>
+                    ],
+                    [
+                        <span class="hljs-number">47.395590322265186</span>,
+                        <span class="hljs-number">8.539435808992085</span>
+                    ]
+                ],
+                <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">1</span>
+            }
+        ],
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">2</span>
+    }
+</code></pre>
+<p>The fields are:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version number for the geofence &quot;polygon&quot; plan format. The documented version is 2.</td>
+</tr>
+<tr>
+<td><code>polygon</code></td>
+<td>A list of points for the polygon. Each point contains a latitude and longitude. The points are ordered in a clockwise winding.</td>
+</tr>
+<tr>
+<td><code>inclusion</code></td>
+<td>Whether or not the geofence is enabled (true) or disabled.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rally_points"><a name="rally_points" class="plugin-anchor" href="#rally_points"><i class="fa fa-link" aria-hidden="true"></i></a>Rally Points </h2>
+<p>Rally point information is optional. 
+The plan can contain an arbitrary number of rally points, each of which has a latitude, longitude, and altitude (above home position).</p>
+<p>A definition with two points is shown below.</p>
+<pre><code class="lang-json">
+    <span class="hljs-string">&quot;rallyPoints&quot;</span>: {
+        <span class="hljs-string">&quot;points&quot;</span>: [
+            [
+                <span class="hljs-number">47.39760401</span>,
+                <span class="hljs-number">8.5509154</span>,
+                <span class="hljs-number">50</span>
+            ],
+            [
+                <span class="hljs-number">47.39902017</span>,
+                <span class="hljs-number">8.54263274</span>,
+                <span class="hljs-number">50</span>
+            ]
+        ],
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">2</span>
+    }
+</code></pre>
+<p>The fields are:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version number for the rally point plan format. The documented version is 2.</td>
+</tr>
+<tr>
+<td><code>points</code></td>
+<td>A list of rally points.</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="parameters.html" class="navigation navigation-prev " aria-label="Previous page: Parameters">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mavlink.html" class="navigation navigation-next " aria-label="Next page: MAVLink Logs">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Plan","level":"1.10.2","depth":2,"next":{"title":"MAVLink Logs","level":"1.10.3","depth":2,"path":"file_formats/mavlink.md","ref":"file_formats/mavlink.md","articles":[]},"previous":{"title":"Parameters","level":"1.10.1","depth":2,"path":"file_formats/parameters.md","ref":"file_formats/parameters.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"en","gitbook":"*"},"file":{"path":"file_formats/plan.md","mtime":"2020-05-01T19:06:04.920Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-01T19:06:38.896Z"},"basePath":"..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+    
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
