@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Top Level Views · QGroundControl Developer Guide</title>
+        <title>Fly View Customization · QGroundControl Developer Guide</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="settings.html" />
+    <link rel="next" href="ReleaseBranchingProcess.html" />
     
     
-    <link rel="prev" href="../fact_system.html" />
+    <link rel="prev" href="ResourceOverride.html" />
     
 
     </head>
@@ -309,9 +309,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9" data-path="./">
+        <li class="chapter " data-level="1.9" data-path="../views/">
             
-                <a href="./">
+                <a href="../views/">
             
                     
                     Top Level Views
@@ -323,9 +323,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="settings.html">
+        <li class="chapter " data-level="1.9.1" data-path="../views/settings.html">
             
-                <a href="settings.html">
+                <a href="../views/settings.html">
             
                     
                     Settings View
@@ -336,9 +336,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="setup.html">
+        <li class="chapter " data-level="1.9.2" data-path="../views/setup.html">
             
-                <a href="setup.html">
+                <a href="../views/setup.html">
             
                     
                     Setup View
@@ -349,9 +349,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="plan.html">
+        <li class="chapter " data-level="1.9.3" data-path="../views/plan.html">
             
-                <a href="plan.html">
+                <a href="../views/plan.html">
             
                     
                     Plan View
@@ -381,9 +381,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.4" data-path="fly.html">
+        <li class="chapter " data-level="1.9.4" data-path="../views/fly.html">
             
-                <a href="fly.html">
+                <a href="../views/fly.html">
             
                     
                     Fly View
@@ -502,9 +502,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="../custom_build/custom_build.html">
+        <li class="chapter " data-level="1.13" data-path="custom_build.html">
             
-                <a href="../custom_build/custom_build.html">
+                <a href="custom_build.html">
             
                     
                     Custom Builds
@@ -516,9 +516,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.13.1" data-path="../custom_build/CreateRepos.html">
+        <li class="chapter " data-level="1.13.1" data-path="CreateRepos.html">
             
-                <a href="../custom_build/CreateRepos.html">
+                <a href="CreateRepos.html">
             
                     
                     Initial Repository Setup For Custom Build
@@ -529,9 +529,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13.2" data-path="../custom_build/Plugins.html">
+        <li class="chapter " data-level="1.13.2" data-path="Plugins.html">
             
-                <a href="../custom_build/Plugins.html">
+                <a href="Plugins.html">
             
                     
                     Custom Build Plugins
@@ -542,9 +542,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13.3" data-path="../custom_build/ResourceOverride.html">
+        <li class="chapter " data-level="1.13.3" data-path="ResourceOverride.html">
             
-                <a href="../custom_build/ResourceOverride.html">
+                <a href="ResourceOverride.html">
             
                     
                     Resources Overrides
@@ -555,9 +555,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13.4" data-path="../custom_build/FlyView.html">
+        <li class="chapter active" data-level="1.13.4" data-path="FlyView.html">
             
-                <a href="../custom_build/FlyView.html">
+                <a href="FlyView.html">
             
                     
                     Fly View Customization
@@ -568,9 +568,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13.5" data-path="../custom_build/ReleaseBranchingProcess.html">
+        <li class="chapter " data-level="1.13.5" data-path="ReleaseBranchingProcess.html">
             
-                <a href="../custom_build/ReleaseBranchingProcess.html">
+                <a href="ReleaseBranchingProcess.html">
             
                     
                     Release/Branching Process For Custom Builds
@@ -772,7 +772,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Top Level Views</a>
+        <a href=".." >Fly View Customization</a>
     </h1>
 </div>
 
@@ -787,8 +787,33 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="top-level-views"><a name="top-level-views" class="plugin-anchor" href="#top-level-views"><i class="fa fa-link" aria-hidden="true"></i></a>Top Level Views</h1>
-<p>This section contains topics about the code for the top level views: settings, setup, plan and fly.</p>
+                                <h1 id="fly-view-customization"><a name="fly-view-customization" class="plugin-anchor" href="#fly-view-customization"><i class="fa fa-link" aria-hidden="true"></i></a>Fly View Customization</h1>
+<p>The Fly View is designed in such a way that it can be cusomtized in multiple ways from simple to more complex. It is designed in three separate layers each of which are customizable providing different levels of change.</p>
+<h2 id="layers"><a name="layers" class="plugin-anchor" href="#layers"><i class="fa fa-link" aria-hidden="true"></i></a>Layers</h2>
+<ul>
+<li>There are three layers to the fly view from top to bottom visually:<ul>
+<li><a href="https://github.com/mavlink/qgroundcontrol/blob/master/src/FlightDisplay/FlyView.qml" target="_blank"><code>FlyView.qml</code></a> This is the base layer of ui and business logic to control map and video switching.</li>
+<li><a href="https://github.com/mavlink/qgroundcontrol/blob/master/src/FlightDisplay/FlyViewWidgetLayer.qml" target="_blank"><code>FlyViewWidgetsOverlay.qml</code></a> This layer includes all the remaining widgets for the fly view.</li>
+<li><a href="https://github.com/mavlink/qgroundcontrol/blob/master/src/FlightDisplay/FlyViewCustomLayer.qml" target="_blank"><code>FlyViewCustomLayer.qml</code></a> This is a layer you override using resource override to add your own custom layer.</li>
+</ul>
+</li>
+</ul>
+<h3 id="inset-negotiation-using-qgctoolinsets"><a name="inset-negotiation-using-qgctoolinsets" class="plugin-anchor" href="#inset-negotiation-using-qgctoolinsets"><i class="fa fa-link" aria-hidden="true"></i></a>Inset Negotiation using <code>QGCToolInsets</code></h3>
+<p>An important aspect of the Fly View is that it needs to understand how much central space it has in the middle of it&apos;s map window which is not obstructed by ui widgets which are at the edges of the window. It uses this information to pan the map when the vehicle goes out of view. This need to be done not only for the window edges but also for the widgets themselve such that the map pans before it goes under a widget.</p>
+<p>This is done through the use of the <a href="https://github.com/mavlink/qgroundcontrol/blob/master/src/QmlControls/QGCToolInsets.qml" target="_blank"><code>QGCToolInsets</code></a> object included in each layer. This objects provides inset information for each window edge informing the system as to how much real estate is taken up by edge based ui. Each layer is given the insets of the layer below it through <code>parentToolInsets</code> and then reports back the new insets taking into account the layer below and it&apos;s own additions through <code>toolInsets</code>. The final results total inset is then given to the map so it can do the right thing. The best way to understand this is to look at both the upstream and custom example code.</p>
+<h3 id="flyviewqml"><a name="flyviewqml" class="plugin-anchor" href="#flyviewqml"><i class="fa fa-link" aria-hidden="true"></i></a><code>FlyView.qml</code></h3>
+<p>The base layer for the view is also the most complex from ui interactions and business logic. It includes the main display elements of map and video as well as the guided controls. Although you can resouce override this layer it is not recommended. And if you do you better really (really) know what you are doing. The reason it is a separate layer is to  make the layer above much simpler and easier to customize.</p>
+<h3 id="flyviewwidgetsoverlayqml"><a name="flyviewwidgetsoverlayqml" class="plugin-anchor" href="#flyviewwidgetsoverlayqml"><i class="fa fa-link" aria-hidden="true"></i></a><code>FlyViewWidgetsOverlay.qml</code></h3>
+<p>This layer contains all the remaining controls of the fly view. You have the ability to hide the controls though use of <a href="https://github.com/mavlink/qgroundcontrol/blob/master/src/api/QGCOptions.h" target="_blank"><code>QGCFlyViewOptions</code></a>. But in order to change the layout of the upstream controls you must use a resource override. If you look at the source you&apos;ll see that the controls themselves are well encapsulated such that it should not be that difficult to create your own override which repositions them and/or adds you own ui. While maintaining a connection to the upstream implementaions of the controls.</p>
+<h3 id="flyviewcustomlayerqml"><a name="flyviewcustomlayerqml" class="plugin-anchor" href="#flyviewcustomlayerqml"><i class="fa fa-link" aria-hidden="true"></i></a><code>FlyViewCustomLayer.qml</code></h3>
+<p>This provides the simplest customization ability to the Fly View. Allowing you the add ui elements which are additive to the existing upstream controls. The upstream code adds no ui elements and is meant to be the basis for you own custom code used as a resource override for this qml. The custom example code provides you with an example of how to do it. </p>
+<h2 id="recommendations"><a name="recommendations" class="plugin-anchor" href="#recommendations"><i class="fa fa-link" aria-hidden="true"></i></a>Recommendations</h2>
+<h3 id="simple-customization"><a name="simple-customization" class="plugin-anchor" href="#simple-customization"><i class="fa fa-link" aria-hidden="true"></i></a>Simple customization</h3>
+<p>The best place to start is using a custom layer override plus turning off ui elements from the widgets layer (if needed). I would recommend trying to stick with only this if at all possible. It provides the greatest abilty to not get screwed by upstream changes in the layers below.</p>
+<h3 id="moderate-complexity-customization"><a name="moderate-complexity-customization" class="plugin-anchor" href="#moderate-complexity-customization"><i class="fa fa-link" aria-hidden="true"></i></a>Moderate complexity customization</h3>
+<p>If you really need to reposition upstream ui elements then your only choice is overriding <code>FlyViewWidgetsOverlay.qml</code>. By doing this you are distancing yourself a bit from upstream changes. Altough you will still get changes in the upstream controls for free. If there is a whole new control added to the fly view upstream you won&apos;t get it until you add it to your own override.</p>
+<h3 id="highly-complex-customization"><a name="highly-complex-customization" class="plugin-anchor" href="#highly-complex-customization"><i class="fa fa-link" aria-hidden="true"></i></a>Highly complex customization</h3>
+<p>The last and least recommended customization mechanism is overriding <code>FlyView.qml</code>. By doing this you are distancing yourself even further from getting upstream changes for free.</p>
 
                                 
                                 </section>
@@ -816,12 +841,12 @@
 
             
                 
-                <a href="../fact_system.html" class="navigation navigation-prev " aria-label="Previous page: Fact System">
+                <a href="ResourceOverride.html" class="navigation navigation-prev " aria-label="Previous page: Resources Overrides">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="settings.html" class="navigation navigation-next " aria-label="Next page: Settings View">
+                <a href="ReleaseBranchingProcess.html" class="navigation navigation-next " aria-label="Next page: Release/Branching Process For Custom Builds">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -832,7 +857,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Top Level Views","level":"1.9","depth":1,"next":{"title":"Settings View","level":"1.9.1","depth":2,"path":"views/settings.md","ref":"views/settings.md","articles":[]},"previous":{"title":"Fact System","level":"1.8","depth":1,"path":"fact_system.md","ref":"fact_system.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"en","gitbook":"*"},"file":{"path":"views/README.md","mtime":"2020-05-06T17:22:29.577Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-06T17:23:33.695Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Fly View Customization","level":"1.13.4","depth":2,"next":{"title":"Release/Branching Process For Custom Builds","level":"1.13.5","depth":2,"path":"custom_build/ReleaseBranchingProcess.md","ref":"custom_build/ReleaseBranchingProcess.md","articles":[]},"previous":{"title":"Resources Overrides","level":"1.13.3","depth":2,"path":"custom_build/ResourceOverride.md","ref":"custom_build/ResourceOverride.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"en","gitbook":"*"},"file":{"path":"custom_build/FlyView.md","mtime":"2020-05-06T17:22:29.577Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-06T17:23:33.695Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
