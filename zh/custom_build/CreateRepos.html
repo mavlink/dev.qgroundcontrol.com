@@ -1,10 +1,10 @@
 
 <!DOCTYPE HTML>
-<html lang="en" >
+<html lang="zh" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Resources Overrides · QGroundControl Developer Guide</title>
+        <title>Initial Repository Setup For Custom Build · QGroundControl Developer Guide</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Toolbar.html" />
+    <link rel="next" href="Plugins.html" />
     
     
-    <link rel="prev" href="Plugins.html" />
+    <link rel="prev" href="custom_build.html" />
     
 
     </head>
@@ -123,7 +123,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="輸入並搜尋" />
 </div>
 
             
@@ -146,7 +146,7 @@
                 <a href="../">
             
                     
-                    Overview
+                    摘要
             
                 </a>
             
@@ -159,7 +159,7 @@
                 <a href="../getting_started/">
             
                     
-                    Getting Started
+                    入门 
             
                 </a>
             
@@ -173,7 +173,7 @@
                 <a href="../getting_started/CentOS.html">
             
                     
-                    Using QGC on CentOS
+                    在 CentOS 上运行 QGC
             
                 </a>
             
@@ -410,51 +410,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.10.1" data-path="../file_formats/parameters.html">
-            
-                <a href="../file_formats/parameters.html">
-            
-                    
-                    Parameters
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10.2" data-path="../file_formats/plan.html">
-            
-                <a href="../file_formats/plan.html">
-            
-                    
-                    Plan
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10.3" data-path="../file_formats/mavlink.html">
-            
-                <a href="../file_formats/mavlink.html">
-            
-                    
-                    MAVLink Logs
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.11" data-path="../tools/">
@@ -516,7 +471,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.13.1" data-path="CreateRepos.html">
+        <li class="chapter active" data-level="1.13.1" data-path="CreateRepos.html">
             
                 <a href="CreateRepos.html">
             
@@ -542,7 +497,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.13.3" data-path="ResourceOverride.html">
+        <li class="chapter " data-level="1.13.3" data-path="ResourceOverride.html">
             
                 <a href="ResourceOverride.html">
             
@@ -673,7 +628,7 @@
 
     
         
-        <li class="header">Dronecode Shortcuts</li>
+        <li class="header">Dronecode快捷方式</li>
         
         
     
@@ -682,7 +637,7 @@
                 <a target="_blank" href="https://docs.qgroundcontrol.com/en/">
             
                     
-                    QGroundControl User Guide
+                    QGroundControl用户指南
             
                 </a>
             
@@ -695,7 +650,7 @@
                 <a target="_blank" href="https://docs.px4.io/en/">
             
                     
-                    PX4 User Guide
+                    PX4用户指南
             
                 </a>
             
@@ -708,7 +663,7 @@
                 <a target="_blank" href="https://dev.px4.io/en/">
             
                     
-                    PX4 Developer Guide
+                    PX4开发人员指南
             
                 </a>
             
@@ -721,7 +676,7 @@
                 <a target="_blank" href="https://mavlink.io/en/">
             
                     
-                    MAVLink Guide
+                    MAVLink指南
             
                 </a>
             
@@ -747,7 +702,7 @@
                 <a target="_blank" href="https://camera-manager.dronecode.org/en/">
             
                     
-                    Dronecode Camera Manager
+                    Dronecode相机管理器
             
                 </a>
             
@@ -762,7 +717,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本書使用 GitBook 釋出
         </a>
     </li>
 </ul>
@@ -785,7 +740,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Resources Overrides</a>
+        <a href=".." >Initial Repository Setup For Custom Build</a>
     </h1>
 </div>
 
@@ -800,21 +755,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="resource-overrides"><a name="resource-overrides" class="plugin-anchor" href="#resource-overrides"><i class="fa fa-link" aria-hidden="true"></i></a>Resource Overrides</h1>
-<p>A &quot;resource&quot; in QGC sourec code terminology is anything found in the <a href="https://github.com/mavlink/qgroundcontrol/blob/master/qgroundcontrol.qrc" target="_blank">qgroundcontrol.qrc</a> and <a href="https://github.com/mavlink/qgroundcontrol/blob/master/qgcresources.qrc" target="_blank">qgcresources.qrc</a> file. By overriding a resource you can replace it with your own version of it. This could be as simple as a single icon, or as complex as replacing an entire Vehicle Setup page of qml ui code.</p>
-<p>Be aware that using resource overrides does not isolate you from upstream QGC changes like the plugin architecture does. In a sense you are directly modify the upstream QGC resources used by the main code.</p>
-<h2 id="exclusion-files"><a name="exclusion-files" class="plugin-anchor" href="#exclusion-files"><i class="fa fa-link" aria-hidden="true"></i></a>Exclusion Files</h2>
-<p>The first step to overriding a resource is to &quot;exclude&quot; is from the standard portion of the upstream build. This means that you are going to provide that resource in your own custom build resource file(s). There are two files which achieve this: <a href="">qgroundcontrol.exclusion</a> and <a href="https://github.com/mavlink/qgroundcontrol/blob/master/custom-example/qgcresources.exclusion" target="_blank">qgcresources.exclusion</a>. They correspond directly with the *.qrc counterparts. In order to exclude a resource, copy the resource line from the .qrc line into the appropriate .exclusion file.</p>
-<h2 id="custom-version-of-excluded-resources"><a name="custom-version-of-excluded-resources" class="plugin-anchor" href="#custom-version-of-excluded-resources"><i class="fa fa-link" aria-hidden="true"></i></a>Custom version of excluded resources</h2>
-<p>You must include the custom version of the overriden resouce in you custom build resource file. The resource alias must exactly match the upstream alias. The actual location and name of the resource can be anywhere without your custom directory structure. </p>
-<h2 id="generating-the-new-modified-versions-of-standard-qgc-resource-file"><a name="generating-the-new-modified-versions-of-standard-qgc-resource-file" class="plugin-anchor" href="#generating-the-new-modified-versions-of-standard-qgc-resource-file"><i class="fa fa-link" aria-hidden="true"></i></a>Generating the new modified versions of standard QGC resource file</h2>
-<p>This is done using the <code>updateqrc.py</code> python script. It will read the upstream qgroundcontrol.qrc and qgcresources.qrc file and the corresponding exclusion files and output new versions of these files in your custom directory. These new versions will not have the resources you specified to exclude in them. The build system for custom builds uses these generated files (if they exist) to build with instead of the upstream versions. The generated version of these file should be added to your repo. Also whenever you update the upstream portion of QGC in your custom repo you must re-run <code>python updateqrc.py</code> to generate new version of the files since the upstream resources may have changed.</p>
-<h2 id="custom-build-example"><a name="custom-build-example" class="plugin-anchor" href="#custom-build-example"><i class="fa fa-link" aria-hidden="true"></i></a>Custom Build Example</h2>
-<p>You can see an examples of custom build qgsresource overrides in the repo custom build example:</p>
-<ul>
-<li><a href="https://github.com/mavlink/qgroundcontrol/blob/master/custom-example/qgcresources.exclusion" target="_blank">qgcresources.qrc</a></li>
-<li><a href="https://github.com/mavlink/qgroundcontrol/blob/master/custom-example/custom.qrc" target="_blank">custom.qrc</a></li>
-</ul>
+                                <h1 id="initial-repository-setup-for-custom-build"><a name="initial-repository-setup-for-custom-build" class="plugin-anchor" href="#initial-repository-setup-for-custom-build"><i class="fa fa-link" aria-hidden="true"></i></a>Initial Repository Setup For Custom Build</h1>
+<p>The suggested mechanism for working on QGC and a custom build version of QGC is two have two separate reposities. The first repo is your main QGC fork. The second repo is your custom build repo.</p>
+<h2 id="main-qgc-respository"><a name="main-qgc-respository" class="plugin-anchor" href="#main-qgc-respository"><i class="fa fa-link" aria-hidden="true"></i></a>Main QGC Respository</h2>
+<p>This repo is used to work on changes to mainline QGC. When creating your own custom build it is not uncommon to discover that you may need a tweak/addition to the custom build to achieve what you want. By discussing those needed changes firsthand with QGC devs and submitting pulls to make the custom build architecture better you make QGC more powerful for everyone and give back to the community.</p>
+<p>The best way to create this repo is to fork the regular QGC repo to your own GitHub account.</p>
+<h2 id="custom-build-respository"><a name="custom-build-respository" class="plugin-anchor" href="#custom-build-respository"><i class="fa fa-link" aria-hidden="true"></i></a>Custom Build Respository</h2>
+<p>This is where you will do your main custom build development. All changes here should be within the custom directory as opposed to bleeding out into the regular QGC codebase.</p>
+<p>Since you can only fork a repro once, the way to create this repo is to &quot;Create a new repository&quot; in your GitHub account. Do not add any additional files to it like gitignore, readme&apos;s and so forth. One it create you will be given the option to setup up the Repo. No you can select to &quot;import code from another repository&quot;. Just import the regular QGC repo using the &quot;Import Code&quot; button.</p>
 
                                 
                                 </section>
@@ -842,12 +790,12 @@
 
             
                 
-                <a href="Plugins.html" class="navigation navigation-prev " aria-label="Previous page: Custom Build Plugins">
+                <a href="custom_build.html" class="navigation navigation-prev " aria-label="Previous page: Custom Builds">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Toolbar.html" class="navigation navigation-next " aria-label="Next page: Toolbar customization">
+                <a href="Plugins.html" class="navigation navigation-next " aria-label="Next page: Custom Build Plugins">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -858,7 +806,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Resources Overrides","level":"1.13.3","depth":2,"next":{"title":"Toolbar customization","level":"1.13.4","depth":2,"path":"custom_build/Toolbar.md","ref":"custom_build/Toolbar.md","articles":[]},"previous":{"title":"Custom Build Plugins","level":"1.13.2","depth":2,"path":"custom_build/Plugins.md","ref":"custom_build/Plugins.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"en","gitbook":"*"},"file":{"path":"custom_build/ResourceOverride.md","mtime":"2020-05-12T04:51:07.078Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T04:52:07.834Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Initial Repository Setup For Custom Build","level":"1.13.1","depth":2,"next":{"title":"Custom Build Plugins","level":"1.13.2","depth":2,"path":"custom_build/Plugins.md","ref":"custom_build/Plugins.md","articles":[]},"previous":{"title":"Custom Builds","level":"1.13","depth":1,"path":"custom_build/custom_build.md","ref":"custom_build/custom_build.md","articles":[{"title":"Initial Repository Setup For Custom Build","level":"1.13.1","depth":2,"path":"custom_build/CreateRepos.md","ref":"custom_build/CreateRepos.md","articles":[]},{"title":"Custom Build Plugins","level":"1.13.2","depth":2,"path":"custom_build/Plugins.md","ref":"custom_build/Plugins.md","articles":[]},{"title":"Resources Overrides","level":"1.13.3","depth":2,"path":"custom_build/ResourceOverride.md","ref":"custom_build/ResourceOverride.md","articles":[]},{"title":"Toolbar customization","level":"1.13.4","depth":2,"path":"custom_build/Toolbar.md","ref":"custom_build/Toolbar.md","articles":[]},{"title":"Fly View Customization","level":"1.13.5","depth":2,"path":"custom_build/FlyView.md","ref":"custom_build/FlyView.md","articles":[]},{"title":"Release/Branching Process For Custom Builds","level":"1.13.6","depth":2,"path":"custom_build/ReleaseBranchingProcess.md","ref":"custom_build/ReleaseBranchingProcess.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"zh","gitbook":"*"},"file":{"path":"custom_build/CreateRepos.md","mtime":"2020-05-12T04:51:07.078Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T04:52:07.834Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>

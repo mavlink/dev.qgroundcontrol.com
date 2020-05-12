@@ -1,10 +1,10 @@
 
 <!DOCTYPE HTML>
-<html lang="en" >
+<html lang="zh" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Overview · QGroundControl Developer Guide</title>
+        <title>QGC Release/Branching Process · QGroundControl Developer Guide</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,8 +77,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="getting_started/" />
+    <link rel="next" href="communication_flow.html" />
     
+    
+    <link rel="prev" href="getting_started/CentOS.html" />
     
 
     </head>
@@ -121,7 +123,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="輸入並搜尋" />
 </div>
 
             
@@ -139,12 +141,12 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
                     
-                    Overview
+                    摘要
             
                 </a>
             
@@ -157,7 +159,7 @@
                 <a href="getting_started/">
             
                     
-                    Getting Started
+                    入门 
             
                 </a>
             
@@ -171,7 +173,7 @@
                 <a href="getting_started/CentOS.html">
             
                     
-                    Using QGC on CentOS
+                    在 CentOS 上运行 QGC
             
                 </a>
             
@@ -184,7 +186,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="ReleaseBranchingProcess.html">
+        <li class="chapter active" data-level="1.3" data-path="ReleaseBranchingProcess.html">
             
                 <a href="ReleaseBranchingProcess.html">
             
@@ -408,51 +410,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.10.1" data-path="file_formats/parameters.html">
-            
-                <a href="file_formats/parameters.html">
-            
-                    
-                    Parameters
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10.2" data-path="file_formats/plan.html">
-            
-                <a href="file_formats/plan.html">
-            
-                    
-                    Plan
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10.3" data-path="file_formats/mavlink.html">
-            
-                <a href="file_formats/mavlink.html">
-            
-                    
-                    MAVLink Logs
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.11" data-path="tools/">
@@ -671,7 +628,7 @@
 
     
         
-        <li class="header">Dronecode Shortcuts</li>
+        <li class="header">Dronecode快捷方式</li>
         
         
     
@@ -680,7 +637,7 @@
                 <a target="_blank" href="https://docs.qgroundcontrol.com/en/">
             
                     
-                    QGroundControl User Guide
+                    QGroundControl用户指南
             
                 </a>
             
@@ -693,7 +650,7 @@
                 <a target="_blank" href="https://docs.px4.io/en/">
             
                     
-                    PX4 User Guide
+                    PX4用户指南
             
                 </a>
             
@@ -706,7 +663,7 @@
                 <a target="_blank" href="https://dev.px4.io/en/">
             
                     
-                    PX4 Developer Guide
+                    PX4开发人员指南
             
                 </a>
             
@@ -719,7 +676,7 @@
                 <a target="_blank" href="https://mavlink.io/en/">
             
                     
-                    MAVLink Guide
+                    MAVLink指南
             
                 </a>
             
@@ -745,7 +702,7 @@
                 <a target="_blank" href="https://camera-manager.dronecode.org/en/">
             
                     
-                    Dronecode Camera Manager
+                    Dronecode相机管理器
             
                 </a>
             
@@ -760,7 +717,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本書使用 GitBook 釋出
         </a>
     </li>
 </ul>
@@ -783,7 +740,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Overview</a>
+        <a href="." >QGC Release/Branching Process</a>
     </h1>
 </div>
 
@@ -798,54 +755,41 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="qgroundcontrol-dev-guide"><a name="qgroundcontrol-dev-guide" class="plugin-anchor" href="#qgroundcontrol-dev-guide"><i class="fa fa-link" aria-hidden="true"></i></a>QGroundControl Dev Guide</h1>
-<p><a href="https://github.com/mavlink/QGroundControl/releases" target="_blank"><img src="https://img.shields.io/github/release/mavlink/QGroundControl.svg" alt="Releases"></a> <a href="https://gitter.im/mavlink/qgroundcontrol?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge" target="_blank"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter"></a> <a href="http://slack.px4.io" target="_blank"><img src="https://px4-slack.herokuapp.com/badge.svg" alt="Slack"></a> <a href="http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers" target="_blank"><img src="https://img.shields.io/badge/discuss-dev-ff69b4.svg" alt="Discuss"></a></p>
-<p>This developer guide is the best source for information if you want to build, modify or extend <a href="http://qgroundcontrol.com" target="_blank">QGroundControl</a> (QGC). 
-It shows how to obtain and build the source code, explains how QGC works, and provides guidelines for contributing code to the project. </p>
-<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> This guide is for <strong>developers</strong>! To learn how to <strong>use</strong> <em>QGroundControl</em>, see the <a href="https://docs.qgroundcontrol.com/en/" target="_blank">User Guide</a>.</p>
-</blockquote>
-<p><span></span></p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> This guide is an active work in progress - information should be correct, but may not be complete!
-If you find that it is missing helpful information (or errors) please raise an <a href="https://github.com/mavlink/qgc-dev-guide/issues" target="_blank">issue</a>.</p>
-</blockquote>
-<h2 id="design-philosophy"><a name="design-philosophy" class="plugin-anchor" href="#design-philosophy"><i class="fa fa-link" aria-hidden="true"></i></a>Design Philosophy</h2>
-<p>QGC is designed to provide a single codebase that can run across multiple OS platforms as well as multiple device sizes and styles.</p>
-<p>The QGC user interface is implemented using <a href="http://doc.qt.io/qt-5/qtqml-index.html" target="_blank">Qt QML</a>. QML provides for hardware acceleration which is a key feature on lower powered devices such as tablets or phones. QML also provides features which allows us to more easily create a single user interface which can adapt itself to differing screen sizes and resolution.</p>
-<p>The QGC UI targets itself more towards a tablet+touch style of UI than a desktop mouse-based UI. This make a single UI easier to create since tablet style UI also tends to work fine on desktop/laptops.</p>
-<h2 id="support"><a name="support" class="plugin-anchor" href="#support"><i class="fa fa-link" aria-hidden="true"></i></a>Support </h2>
-<p>Development questions can be raised in the <a href="http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers" target="_blank">QGroundControl Developer</a> discuss category or the <a href="https://px4.slack.com/" target="_blank">#QGroundControl Slack channel</a>.</p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> The <a href="https://gitter.im/mavlink/qgroundcontrol" target="_blank">Gitter</a> channel will be closed in early March 2020.</p>
-</blockquote>
-<h2 id="contribution"><a name="contribution" class="plugin-anchor" href="#contribution"><i class="fa fa-link" aria-hidden="true"></i></a>Contribution</h2>
-<p>Information about contributing, including coding styles, testing and licenses can be found in <a href="contribute/">Code Submissions</a>.</p>
-<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> We expect all contributors to adhere to the <a href="https://github.com/mavlink/qgroundcontrol/blob/master/CODE_OF_CONDUCT.md" target="_blank">QGroundControl code of conduct</a>. 
-  This code aims to foster an open and welcoming environment.</p>
-</blockquote>
-<h3 id="translations"><a name="translations" class="plugin-anchor" href="#translations"><i class="fa fa-link" aria-hidden="true"></i></a>Translations</h3>
-<p>We use <a href="https://crowdin.com" target="_blank">Crowdin</a> to make it easier to manage translation for both <em>QGroundControl</em> and the documentation.</p>
-<p>The translation projects (and join links) are listed below:</p>
+                                <h1 id="qgroundcontrol-releasebranching-process"><a name="qgroundcontrol-releasebranching-process" class="plugin-anchor" href="#qgroundcontrol-releasebranching-process"><i class="fa fa-link" aria-hidden="true"></i></a>QGroundControl Release/Branching process</h1>
+<h2 id="semantic-versioning"><a name="semantic-versioning" class="plugin-anchor" href="#semantic-versioning"><i class="fa fa-link" aria-hidden="true"></i></a>Semantic Versioning</h2>
+<p>QGC uses semantic versioning for the version numbers associated with its releases. Semantic versioning is a 3-component number in the format of <code>vX.Y.Z</code>, where:</p>
 <ul>
-<li><a href="https://crowdin.com/project/qgroundcontrol" target="_blank">QGroundControl</a> (<a href="https://crwd.in/qgroundcontrol" target="_blank">join</a>)</li>
-<li><a href="https://crowdin.com/project/qgroundcontrol-user-guide" target="_blank">QGroundControl User Guide</a> (<a href="https://crwd.in/qgroundcontrol-user-guide" target="_blank">join</a>)</li>
-<li><a href="https://crowdin.com/project/qgroundcontrol-developer-guide" target="_blank">QGroundControl Developer Guide</a> (<a href="https://crwd.in/qgroundcontrol-developer-guide" target="_blank">join</a>)</li>
+<li><code>X</code> is the major version.</li>
+<li><code>Y</code> is the minor version.</li>
+<li><code>Z</code> is the patch version.</li>
 </ul>
-<p>The PX4 Developer Guide contains additional information about the (common) docs/translation toolchain:</p>
-<ul>
-<li><a href="https://dev.px4.io/en/contribute/docs.html" target="_blank">Documentation</a></li>
-<li><a href="https://dev.px4.io/en/contribute/docs.html" target="_blank">Translation</a></li>
-</ul>
-<h2 id="license"><a name="license" class="plugin-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>License</h2>
-<p><em>QGroundControl</em> source code is <a href="https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md" target="_blank">dual-licensed under Apache 2.0 and GPLv3</a>.
-For more information see: <a href="contribute/licences.html">Licenses</a>.</p>
-<h2 id="governance"><a name="governance" class="plugin-anchor" href="#governance"><i class="fa fa-link" aria-hidden="true"></i></a>Governance</h2>
-<p>The QGroundControl mission planner is hosted under the governance of the <a href="https://www.dronecode.org/" target="_blank">Dronecode Project</a>.</p>
-<p><a href="https://www.dronecode.org/" style="padding:20px" target="_blank"><img src="https://mavlink.io/assets/site/logo_dronecode.png" alt="Dronecode Logo" width="110px"></a>
-<a href="https://www.linuxfoundation.org/projects" style="padding:20px;" target="_blank"><img src="https://mavlink.io/assets/site/logo_linux_foundation.png" alt="Linux Foundation Logo" width="80px"></a></p>
-<div style="padding:10px">&#xA0;</div>
+<h2 id="stable-builds"><a name="stable-builds" class="plugin-anchor" href="#stable-builds"><i class="fa fa-link" aria-hidden="true"></i></a>Stable Builds</h2>
+<p>The current stable build is the highest quality build available for QGC. <a href="#patch_releases">Patch releases</a> of the stable build are regularly made to fix important issues.</p>
+<p>Stable builds are built from a separate branch that is named with the format: <code>Stable_VX.Y</code> (note, there is no patch number!) The branch has one or more git tags for each patch release (with the format <code>vX.Y.Z</code>), indicating the point in the repo source code that the associated patch release was created from.</p>
+<h3 id="patch_releases"><a name="patch_releases" class="plugin-anchor" href="#patch_releases"><i class="fa fa-link" aria-hidden="true"></i></a>Patch Releases </h3>
+<p>A patch release contains fixes to the stable release that are important enough to <em>require</em> an update, and are safe enough that the stable release continues to maintain high quality.</p>
+<p>Patch releases increment the patch version number only.</p>
+<h3 id="patch---development-stage"><a name="patch---development-stage" class="plugin-anchor" href="#patch---development-stage"><i class="fa fa-link" aria-hidden="true"></i></a>Patch - Development Stage</h3>
+<p>Approved fixes to the stable release are commited to the current stable branch. These fixes continue to queue up in the stable branch until a patch release is made (see next step).</p>
+<p>Commits/changes to the stable branch must also be brought over to the master branch (either through cherry pick or separate pulls).</p>
+<h3 id="patch---release-stage"><a name="patch---release-stage" class="plugin-anchor" href="#patch---release-stage"><i class="fa fa-link" aria-hidden="true"></i></a>Patch - Release Stage</h3>
+<p>At the point where the decision is made to do a patch release, the release binaries are created and a new <em>tag</em> is added to the stable branch (with the same patch release number) indicating the associated source code.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> New branches are not created for patch releases - only for major and minor releases.</p>
+</blockquote>
+<h2 id="daily-builds"><a name="daily-builds" class="plugin-anchor" href="#daily-builds"><i class="fa fa-link" aria-hidden="true"></i></a>Daily Builds</h2>
+<h3 id="development-stage"><a name="development-stage" class="plugin-anchor" href="#development-stage"><i class="fa fa-link" aria-hidden="true"></i></a>Development Stage</h3>
+<p>Daily builds are built from the <code>master</code> branch, and this is where all new major feature development happens. The state of master represents either the next minor point release, or a new major version release (depending on the level of change).</p>
+<p>There are no git tags associated with a released daily builds. The released daily build will always match repo HEAD.</p>
+<h3 id="release-stage"><a name="release-stage" class="plugin-anchor" href="#release-stage"><i class="fa fa-link" aria-hidden="true"></i></a>Release Stage</h3>
+<p>When the decision is made to release a new major/minor version the master branch tends to go through an intial lockdown mode. This is where only important fixes for the release are accepted as pull requests.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> During the lockdown phase, new features are not allowed in master.</p>
+</blockquote>
+<p>Once the level of fixes associated with the release slows down to a low level, a new stable branch is created (at this point the <code>master</code> branch can move forward again as the latest and greatest).</p>
+<p>Fixes continue in the stable branch until it is deemed ready to release (ideally after a short time)! At that point the new stable branch is tagged with the new version tag and the first stable release is made.</p>
+<h2 id="custom-builds"><a name="custom-builds" class="plugin-anchor" href="#custom-builds"><i class="fa fa-link" aria-hidden="true"></i></a>Custom Builds</h2>
+<p>A proposed strategy for branching on custom builds can be found <a href="custom_build/ReleaseBranchingProcess.html">here</a>.</p>
 
                                 
                                 </section>
@@ -873,8 +817,12 @@ For more information see: <a href="contribute/licences.html">Licenses</a>.</p>
 
             
                 
+                <a href="getting_started/CentOS.html" class="navigation navigation-prev " aria-label="Previous page: 在 CentOS 上运行 QGC">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="getting_started/" class="navigation navigation-next navigation-unique" aria-label="Next page: Getting Started">
+                
+                <a href="communication_flow.html" class="navigation navigation-next " aria-label="Next page: Communication Flow">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -885,7 +833,7 @@ For more information see: <a href="contribute/licences.html">Licenses</a>.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Overview","level":"1.1","depth":1,"next":{"title":"Getting Started","level":"1.2","depth":1,"path":"getting_started/README.md","ref":"getting_started/README.md","articles":[{"title":"Using QGC on CentOS","level":"1.2.1","depth":2,"path":"getting_started/CentOS.md","ref":"getting_started/CentOS.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"en","gitbook":"*"},"file":{"path":"README.md","mtime":"2020-05-12T04:51:07.074Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T04:52:07.834Z"},"basePath":".","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"QGC Release/Branching Process","level":"1.3","depth":1,"next":{"title":"Communication Flow","level":"1.4","depth":1,"path":"communication_flow.md","ref":"communication_flow.md","articles":[]},"previous":{"title":"在 CentOS 上运行 QGC","level":"1.2.1","depth":2,"path":"getting_started/CentOS.md","ref":"getting_started/CentOS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"zh","gitbook":"*"},"file":{"path":"ReleaseBranchingProcess.md","mtime":"2020-05-12T04:51:07.078Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T04:52:07.834Z"},"basePath":".","book":{"language":"zh"}});
         });
     </script>
 </div>
