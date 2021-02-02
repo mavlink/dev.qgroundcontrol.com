@@ -837,18 +837,18 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="getting-started"><a name="getting-started" class="plugin-anchor" href="#getting-started"><i class="fa fa-link" aria-hidden="true"></i></a>Getting Started</h1>
-<p>This topic explains how to get the <em>QGroundControl</em> source code and build it either natively or within a <em>Vagrant</em> environment. 
+<p>This topic explains how to get the <em>QGroundControl</em> source code and build it either natively or within a <em>Vagrant</em> environment.
 It also provides information about optional or OS specific functionality.</p>
 <h2 id="daily-builds"><a name="daily-builds" class="plugin-anchor" href="#daily-builds"><i class="fa fa-link" aria-hidden="true"></i></a>Daily Builds</h2>
-<p>If you just want to test (and not debug) a recent build of <em>QGroundControl</em> you can use the <a href="https://docs.qgroundcontrol.com/en/releases/daily_builds.html" target="_blank">Daily Build</a>. Versions are provided for all platforms. </p>
+<p>If you just want to test (and not debug) a recent build of <em>QGroundControl</em> you can use the <a href="https://docs.qgroundcontrol.com/en/releases/daily_builds.html" target="_blank">Daily Build</a>. Versions are provided for all platforms.</p>
 <h2 id="source-code"><a name="source-code" class="plugin-anchor" href="#source-code"><i class="fa fa-link" aria-hidden="true"></i></a>Source Code</h2>
 <p>Source code for <em>QGroundControl</em> is kept on GitHub here: <a href="https://github.com/mavlink/qgroundcontrol" target="_blank">https://github.com/mavlink/qgroundcontrol</a>.
 It is <a href="https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md" target="_blank">dual-licensed under Apache 2.0 and GPLv3</a>.</p>
 <p>To get the source files:</p>
 <ol>
-<li>Clone the repo (or your fork) including submodules:<pre><code>git clone https://github.com/mavlink/qgroundcontrol.git --recursive
+<li>Clone the repo (or your fork) including submodules:<pre><code>git clone --recursive -j8 https://github.com/mavlink/qgroundcontrol.git
 </code></pre></li>
-<li>Update submodules (required each time you pull new source code):<pre><code>git submodule update
+<li>Update submodules (required each time you pull new source code):<pre><code>git submodule update --recursive
 </code></pre></li>
 </ol>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
@@ -881,18 +881,19 @@ It is <a href="https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md"
 <p>To install Qt:</p>
 <ol>
 <li>Download and run the <a href="http://www.qt.io/download-open-source" target="_blank">Qt Online Installer</a><ul>
-<li><strong>Ubuntu:</strong> <ul>
-<li>Set the downloaded file to executable using: <code>chmod +x</code>. </li>
+<li><strong>Ubuntu:</strong><ul>
+<li>Set the downloaded file to executable using: <code>chmod +x</code>.</li>
 <li>Install to default location for use with <strong>./qgroundcontrol-start.sh.</strong> If you install Qt to a non-default location you will need to modify <strong>qgroundcontrol-start.sh</strong> in order to run downloaded builds.</li>
 </ul>
 </li>
+<li><strong>Arch Linux:</strong> Run the <a href="https://github.com/mavlink/qgroundcontrol/blob/master/tools/setup/arch.sh" target="_blank">setup script</a> for all dependiencies <strong>including Qt</strong>.</li>
 </ul>
 </li>
 <li><p>In the installer <em>Select Components</em> dialog choose: 5.12.6.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p> If the version needed is not displayed, check the archive (show archive and refresh).</p>
 </blockquote>
-<p>Then install just the following components: </p>
+<p>Then install just the following components:</p>
 <ul>
 <li><strong>Windows</strong>: <em>MSVC 2017 64 bit</em></li>
 <li><strong>MacOS</strong>: <em>macOS</em></li>
@@ -907,7 +908,6 @@ It is <a href="https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md"
 <li>Install Additional Packages (Platform Specific)<ul>
 <li><strong>Ubuntu:</strong> <code>sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev</code></li>
 <li><strong>Fedora:</strong> <code>sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel</code></li>
-<li><strong>Arch Linux:</strong> <code>pacman -Sy speech-dispatcher</code></li>
 <li><strong>Android:</strong> <a href="http://doc.qt.io/qt-5/androidgs.html" target="_blank">Qt Android Setup</a></li>
 </ul>
 </li>
@@ -937,6 +937,21 @@ It is <a href="https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md"
 <li><p>Build using the &quot;hammer&quot; (or &quot;play&quot;) icons:</p>
 <p><img src="../../assets/getting_started/qt_creator_build_qgc.png" alt="QtCreator Build Button"></p>
 </li>
+</ol>
+<h4 id="build-using-qmake-on-cli"><a name="build-using-qmake-on-cli" class="plugin-anchor" href="#build-using-qmake-on-cli"><i class="fa fa-link" aria-hidden="true"></i></a>Build using qmake on CLI</h4>
+<p>Example commands to build a default QGC and run it afterwards:</p>
+<ol>
+<li>Make sure you cloned the repository and updated the submodules before, see chapter <em>Source Code</em> above and switch into the repository folder:<pre><code>cd qgroundcontrol
+</code></pre></li>
+<li>Create and enter a shadow build directory:<pre><code>mkdir build
+cd build
+</code></pre></li>
+<li>Configure the build using the qmake script in the root of the repository:<pre><code>qmake ../
+</code></pre></li>
+<li>Run make to compile and link. To accelerate the process things you can use the -j{number of threds} parameter.<pre><code>make -j12
+</code></pre></li>
+<li>Run the QGroundcontrol binary that was just built:<pre><code>./staging/QGroundControl
+</code></pre></li>
 </ol>
 <h3 id="vagrant"><a name="vagrant" class="plugin-anchor" href="#vagrant"><i class="fa fa-link" aria-hidden="true"></i></a>Vagrant</h3>
 <p><a href="https://www.vagrantup.com/" target="_blank">Vagrant</a> can be used to build and run <em>QGroundControl</em> within a Linux virtual machine (the build can also be run on the host machine if it is compatible).</p>
@@ -1007,7 +1022,7 @@ It is <a href="https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md"
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Getting Started","level":"1.2","depth":1,"next":{"title":"Using QGC on CentOS","level":"1.2.1","depth":2,"path":"getting_started/CentOS.md","ref":"getting_started/CentOS.md","articles":[]},"previous":{"title":"Overview","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/mavlink/qgc-dev-guide/master/book.json","options":[{"value":"https://dev.qgroundcontrol.com/master/en/","text":"master"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qgc_version":"master","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"en","gitbook":"*"},"file":{"path":"getting_started/README.md","mtime":"2020-12-28T08:10:08.959Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-28T08:10:42.248Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Getting Started","level":"1.2","depth":1,"next":{"title":"Using QGC on CentOS","level":"1.2.1","depth":2,"path":"getting_started/CentOS.md","ref":"getting_started/CentOS.md","articles":[]},"previous":{"title":"Overview","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/mavlink/qgc-dev-guide/master/book.json","options":[{"value":"https://dev.qgroundcontrol.com/master/en/","text":"master"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qgc_version":"master","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"en","gitbook":"*"},"file":{"path":"getting_started/README.md","mtime":"2021-02-02T22:29:27.069Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-02T22:30:08.630Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
