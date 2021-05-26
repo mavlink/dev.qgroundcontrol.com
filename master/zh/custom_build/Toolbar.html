@@ -163,7 +163,7 @@
                 <a href="../getting_started/">
             
                     
-                    入门 
+                    Getting Started with source & builds
             
                 </a>
             
@@ -172,12 +172,25 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../getting_started/CentOS.html">
+        <li class="chapter " data-level="1.2.1" data-path="../getting_started/container.html">
+            
+                <a href="../getting_started/container.html">
+            
+                    
+                    Build using Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../getting_started/CentOS.html">
             
                 <a href="../getting_started/CentOS.html">
             
                     
-                    在 CentOS 上运行 QGC
+                    Using QGC on CentOS
             
                 </a>
             
@@ -604,7 +617,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.14.1" data-path="../contribute/coding_style.html">
+        <li class="chapter " data-level="1.14.1" data-path="../contribute/dev_call.html">
+            
+                <a href="../contribute/dev_call.html">
+            
+                    
+                    Developer Call
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../contribute/coding_style.html">
             
                 <a href="../contribute/coding_style.html">
             
@@ -617,7 +643,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14.2" data-path="../contribute/unit_tests.html">
+        <li class="chapter " data-level="1.14.3" data-path="../contribute/unit_tests.html">
             
                 <a href="../contribute/unit_tests.html">
             
@@ -630,7 +656,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14.3" data-path="../contribute/pull_requests.html">
+        <li class="chapter " data-level="1.14.4" data-path="../contribute/pull_requests.html">
             
                 <a href="../contribute/pull_requests.html">
             
@@ -643,7 +669,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14.4" data-path="../contribute/licences.html">
+        <li class="chapter " data-level="1.14.5" data-path="../contribute/licences.html">
             
                 <a href="../contribute/licences.html">
             
@@ -807,7 +833,7 @@
 <p>The Indicator section varies based on the view currently displayed:</p>
 <ul>
 <li>Fly View - Shows all indicators</li>
-<li>Plan View - Show no indicators and has it own custom indicator section for Plan status values.</li>
+<li>Plan View - Show no indicators and has its own custom indicator section for Plan status values</li>
 <li>Other Views - Do not show Vehicle Mode Indicators</li>
 </ul>
 <h2 id="customization-possibilities"><a name="customization-possibilities" class="plugin-anchor" href="#customization-possibilities"><i class="fa fa-link" aria-hidden="true"></i></a>Customization Possibilities</h2>
@@ -818,8 +844,8 @@
 <h4 id="vehicle-indicators"><a name="vehicle-indicators" class="plugin-anchor" href="#vehicle-indicators"><i class="fa fa-link" aria-hidden="true"></i></a>Vehicle Indicators</h4>
 <p>These are indicators which are associated with information about the vehicle. They are only available when a vehicle is connected. To manipulate the list of vehicle indicators you override <code>FirmwarePlugin::toolIndicators</code>.</p>
 <h4 id="vehicle-mode-indicators"><a name="vehicle-mode-indicators" class="plugin-anchor" href="#vehicle-mode-indicators"><i class="fa fa-link" aria-hidden="true"></i></a>Vehicle Mode Indicators</h4>
-<p>These are indicators which are associated with information about the vehicle by require additional ui provided by the Fly View to complete their actions. An example is Arming and Disarming. They are only available when a vehicle is connected. To manipulate the list of vehicle mode indicators you override <code>FirmwarePlugin::modeIndicators</code>.</p>
-<h3 id="modifying-the-toolbar-ui-itself"><a name="modifying-the-toolbar-ui-itself" class="plugin-anchor" href="#modifying-the-toolbar-ui-itself"><i class="fa fa-link" aria-hidden="true"></i></a>Modifying the toolbar ui itself</h3>
+<p>These are indicators which are associated with information about the vehicle. They require additional UI provided by the Fly View to complete their actions. An example is Arming and Disarming. They are only available when a vehicle is connected. To manipulate the list of vehicle mode indicators you override <code>FirmwarePlugin::modeIndicators</code>.</p>
+<h3 id="modifying-the-toolbar-ui-itself"><a name="modifying-the-toolbar-ui-itself" class="plugin-anchor" href="#modifying-the-toolbar-ui-itself"><i class="fa fa-link" aria-hidden="true"></i></a>Modifying the toolbar UI itself</h3>
 <p>This is accomplished by using resource overrides on the qml files associated with the toolbar. This provides a high level of customization but also a higher level of complexity. The primary ui for the toolbar is in <code>MainToolBar.qml</code>. The main window code in <code>MainRootWindow.qml</code> interacts with the toolbar to show different indicator sections based on current view as well as whether the mode indicators show or not also based on current view.</p>
 <p>If you want full control over the toolbar then you can override <code>MainToolBar.qml</code> and make your own completely different version. You will need to pay special attention to the interactions of the main toolbar with <code>MainRootWindow.qml</code> since you are going to need to replicated those interactions in your own custom version.</p>
 <p>There are two standard indicator ui sections of the toolbar:</p>
@@ -870,7 +896,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Toolbar customization","level":"1.13.4.2","depth":3,"next":{"title":"Fly View Customization","level":"1.13.4.3","depth":3,"path":"custom_build/FlyView.md","ref":"custom_build/FlyView.md","articles":[]},"previous":{"title":"First Run Prompts","level":"1.13.4.1","depth":3,"path":"custom_build/FirstRunPrompts.md","ref":"custom_build/FirstRunPrompts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/mavlink/qgc-dev-guide/master/book.json","options":[{"value":"https://dev.qgroundcontrol.com/master/en/","text":"master"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qgc_version":"master","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"zh","gitbook":"*"},"file":{"path":"custom_build/Toolbar.md","mtime":"2021-05-26T12:07:54.574Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-26T12:08:35.316Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"Toolbar customization","level":"1.13.4.2","depth":3,"next":{"title":"Fly View Customization","level":"1.13.4.3","depth":3,"path":"custom_build/FlyView.md","ref":"custom_build/FlyView.md","articles":[]},"previous":{"title":"First Run Prompts","level":"1.13.4.1","depth":3,"path":"custom_build/FirstRunPrompts.md","ref":"custom_build/FirstRunPrompts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","custom-favicon","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","validate-links","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"validate-links":{"defaultScheme":"https","local":"warn","remote":"disabled"},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/mavlink/qgc-dev-guide/master/book.json","options":[{"value":"https://dev.qgroundcontrol.com/master/en/","text":"master"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qgc_version":"master","qt_version":"5.12.6"},"title":"QGroundControl Developer Guide","language":"zh","gitbook":"*"},"file":{"path":"custom_build/Toolbar.md","mtime":"2021-05-26T23:01:54.312Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-26T23:02:34.121Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
