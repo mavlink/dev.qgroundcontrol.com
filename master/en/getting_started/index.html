@@ -891,20 +891,26 @@ It is <a href="https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md"
 </code></pre></li>
 </ol>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-thumbs-o-up"></strong>
-<p> Github source-code zip files cannot be used because these do not contain the appropriate submodule source code. You must use git!</p>
+<p> Github source-code zip files cannot be used because these do not contain the appropriate submodule source code.
+You must use git!</p>
 </blockquote>
 <h2 id="build-qgroundcontrol"><a name="build-qgroundcontrol" class="plugin-anchor" href="#build-qgroundcontrol"><i class="fa fa-link" aria-hidden="true"></i></a>Build QGroundControl</h2>
 <h3 id="using-containers"><a name="using-containers" class="plugin-anchor" href="#using-containers"><i class="fa fa-link" aria-hidden="true"></i></a>Using Containers</h3>
 <p>We support Linux builds using a container found on the source tree of the repository, which can help you develop and deploy the QGC apps without having to install any of the requirements on your local environment.</p>
 <p><a href="container.html">Container Guide</a></p>
 <h3 id="native-builds"><a name="native-builds" class="plugin-anchor" href="#native-builds"><i class="fa fa-link" aria-hidden="true"></i></a>Native Builds</h3>
-<p><em>QGroundControl</em> builds are supported for macOS, Linux, Windows, iOS and Android. <em>QGroundControl</em> uses <a href="http://www.qt.io" target="_blank">Qt</a> as its cross-platform support library and uses <a href="http://doc.qt.io/qtcreator/index.html" target="_blank">QtCreator</a> as its default build environment.</p>
+<p><em>QGroundControl</em> builds are supported for macOS, Linux, Windows, iOS and Android.
+<em>QGroundControl</em> uses <a href="http://www.qt.io" target="_blank">Qt</a> as its cross-platform support library and uses <a href="http://doc.qt.io/qtcreator/index.html" target="_blank">QtCreator</a> as its default build environment.</p>
 <ul>
 <li><strong>macOS:</strong> v10.11 or higher</li>
 <li><strong>Ubuntu:</strong> 64 bit, gcc compiler</li>
 <li><strong>Windows:</strong> Vista or higher, <a href="#vs">Visual Studio 2019 compiler</a> (64 bit)</li>
 <li><strong>iOS:</strong> 10.0 and higher</li>
-<li><strong>Android:</strong> Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.</li>
+<li><strong>Android:</strong> Jelly Bean (4.1) and higher.<ul>
+<li>Standard QGC is built against ndk version 19.</li>
+<li>Java JDK 11 is required.</li>
+</ul>
+</li>
 <li><strong>Qt version:</strong> 5.15.2 <strong>(only)</strong> <!-- NOTE 5.15.2 is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json --><blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p> <strong>Do not use any other version of Qt!</strong>
   QGC has been thoroughly tested with the specified version of Qt (5.15.2).
@@ -958,7 +964,7 @@ It is <a href="https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md"
 <li><strong>Fedora:</strong> <code>sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel patchelf</code></li>
 <li><strong>Arch Linux:</strong> <code>pacman -Sy speech-dispatcher patchelf</code></li>
 <li><strong>Android:</strong> <a href="http://doc.qt.io/qt-5/androidgs.html" target="_blank">Qt Android Setup</a><blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p>: JDK11 is required (install if needed)!</p>
+<p> JDK11 is required (install if needed)!</p>
 </blockquote>
 </li>
 </ul>
@@ -970,6 +976,20 @@ It is <a href="https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md"
 </blockquote>
 <ul>
 <li><strong>Video Streaming/Gstreamer:</strong> - see <a href="https://github.com/mavlink/qgroundcontrol/blob/master/src/VideoReceiver/README.md" target="_blank">Video Streaming</a>.</li>
+<li><strong>Airmap SDK:</strong> - TBD.</li>
+</ul>
+</li>
+<li><p>Disable platform-specific optional features that are enabled (but not installed), by default.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> This currently applies to Airmap on Linux, which is optional but enabled by default.</p>
+</blockquote>
+<ul>
+<li><strong>Ubuntu:</strong> <ul>
+<li>Airmap: Create a file named <strong>user_config.pri</strong> (in the repo root directory) containing the text <code>DEFINES += DISABLE_AIRMAP</code>.
+This can be done in a bash terminal using the command:<pre><code>echo -e &quot;DEFINES += DISABLE_AIRMAP\r\n&quot; | tee user_config.pri
+</code></pre></li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
@@ -983,11 +1003,13 @@ It is <a href="https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md"
 </li>
 <li><strong>Ubuntu:</strong> Desktop Qt 5.15.2 GCC 64bit</li>
 <li><strong>Windows:</strong> Desktop Qt 5.15.2 MSVC2019 <strong>64bit</strong></li>
-<li><strong>Android:</strong> Android for armeabi-v7a (GCC 4.9, Qt 5.15.2)</li>
+<li><strong>Android:</strong> Android for armeabi-v7a (GCC 4.9, Qt 5.15.2)<ul>
+<li>JDK11 is required.
+You can confirm it is being used by reviewing the project setting: <strong>Projects &gt; Manage Kits &gt; Devices &gt; Android (tab) &gt; Android Settings &gt; <em>JDK location</em></strong>.</li>
 </ul>
 </li>
-<li>(Android only) Confirm JDK11 is being used by reviewing the information in the <em>JDK location</em> project setting (<strong>Projects &gt; Manage Kits &gt; Devices &gt; Android (tab) &gt; Android Settings &gt; JDK location</strong>).
-Update the location if necessary.</li>
+</ul>
+</li>
 <li><p>Build using the &quot;hammer&quot; (or &quot;play&quot;) icons:</p>
 <p><img src="../../assets/getting_started/qt_creator_build_qgc.png" alt="QtCreator Build Button"></p>
 </li>
@@ -1002,9 +1024,17 @@ cd build
 </code></pre></li>
 <li>Configure the build using the qmake script in the root of the repository:<pre><code>qmake ../
 </code></pre></li>
-<li>Run make to compile and link. To accelerate the process things you can use the -j{number of threds} parameter.<pre><code>make -j12
-</code></pre></li>
-<li>Run the QGroundcontrol binary that was just built:<pre><code>./staging/QGroundControl
+<li><p>Run make to compile and link.
+To accelerate the process things you can use the <code>-j{number of threads}</code> parameter.</p>
+<pre><code>make -j12
+</code></pre><blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> You can also specify build time flags here.
+For example, you could disable airmap inclusion using the command:</p>
+<pre><code>DEFINES+=DISABLE_AIRMAP make build
+</code></pre></blockquote>
+</li>
+<li><p>Run the QGroundcontrol binary that was just built:</p>
+<pre><code>./staging/QGroundControl
 </code></pre></li>
 </ol>
 <h3 id="vagrant"><a name="vagrant" class="plugin-anchor" href="#vagrant"><i class="fa fa-link" aria-hidden="true"></i></a>Vagrant</h3>
@@ -1076,7 +1106,7 @@ cd build
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Getting Started with source & builds","level":"1.2","depth":1,"next":{"title":"Build using Containers","level":"1.2.1","depth":2,"path":"getting_started/container.md","ref":"getting_started/container.md","articles":[]},"previous":{"title":"Overview","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","custom-favicon","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/mavlink/qgc-dev-guide/master/book.json","options":[{"value":"https://dev.qgroundcontrol.com/master/en/","text":"master"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qgc_version":"master","qt_version":"5.15.2"},"title":"QGroundControl Developer Guide","language":"en","gitbook":"*"},"file":{"path":"getting_started/README.md","mtime":"2022-11-22T22:11:51.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-22T22:12:26.409Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Getting Started with source & builds","level":"1.2","depth":1,"next":{"title":"Build using Containers","level":"1.2.1","depth":2,"path":"getting_started/container.md","ref":"getting_started/container.md","articles":[]},"previous":{"title":"Overview","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","richquotes@git+https://github.com/Dronecode/gitbook-plugin-richquotes.git","anchors","page-toc-button","collapsible-menu","language-picker","custom-favicon","language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git","toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git","versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git","theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-dronecode":{"logo":{"logo_large":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_full.png","logo_small":"gitbook-plugin-theme-dronecode/images/dronecode_top_bar_logo_small.png","url":"https://www.dronecode.org/"}},"collapsible-menu":{},"language-picker":{"grid-columns":3},"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"language-redirect":{"baseurl":"https://donlakeflyer.gitbooks.io/qgroundcontrol-developers-guide/"},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"tip":{"alert":"success","picto":"fa-thumbs-o-up"}},"highlight":{},"favicon":"favicon.ico","page-toc-button":{},"custom-favicon":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/mavlink/qgc-dev-guide/master/book.json","options":[{"value":"https://dev.qgroundcontrol.com/master/en/","text":"master"}]},"toolbar":{"buttons":[{"label":"Bug tracker","icon":"fa fa-bug","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/issues/new?title=Doc+Bug:+{{title}}&body=DESCRIBE+PROBLEM+WITH+DOCS+HERE%0A%0ABug+Page:+[{{title}}]({{url}})"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/mavlink/qgc-dev-guide"},{"label":"Edit page on github","icon":"fa fa-pencil-square-o","position":"left","url":"https://github.com/mavlink/qgc-dev-guide/edit/master/{{filepath_lang}}"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"logo":"./assets/site/logo_qgc_rgb_horizontal.png","qgc_version":"master","qt_version":"5.15.2"},"title":"QGroundControl Developer Guide","language":"en","gitbook":"*"},"file":{"path":"getting_started/README.md","mtime":"2022-11-22T22:13:09.602Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-22T22:13:17.469Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
